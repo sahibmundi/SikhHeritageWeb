@@ -1,18 +1,65 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
-});
+// Timeline Event Type
+export interface TimelineEvent {
+  year: string;
+  label: string;
+  sectionId: string;
+}
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
-});
+// Biography Section Type
+export interface BiographySection {
+  id: string;
+  heading: string;
+  content: string;
+}
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+// Shabad Type
+export interface Shabad {
+  id: string;
+  title: string;
+  gurmukhi: string;
+  meaning: string;
+  teeka: string;
+  raag: {
+    name: string;
+    time: string;
+    mood: string;
+    significance: string;
+  };
+  audioUrl?: string;
+}
+
+// Gurdwara Type
+export interface Gurdwara {
+  id: string;
+  name: string;
+  imageUrl: string;
+  briefHistory: string;
+  fullHistory: string;
+  location: {
+    address: string;
+    mapEmbedUrl: string;
+  };
+}
+
+// Resource Type
+export interface Resource {
+  id: string;
+  title: string;
+  description: string;
+  pdfUrl: string;
+  category: string;
+}
+
+// Export types for use in components
+export type {
+  TimelineEvent,
+  BiographySection,
+  Shabad,
+  Gurdwara,
+  Resource
+};
