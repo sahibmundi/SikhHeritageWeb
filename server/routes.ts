@@ -1,7 +1,9 @@
 import type { Express } from "express";
+import { createServer, type Server } from "http";
 import { storage } from "./storage";
 
-export function registerRoutes(app: Express) {
+export function registerRoutes(app: Express): Server {
+  const httpServer = createServer(app);
   // Biography endpoints
   app.get("/api/biography/timeline", async (req, res) => {
     try {
@@ -82,4 +84,6 @@ export function registerRoutes(app: Express) {
       res.status(500).json({ error: "Failed to fetch resources" });
     }
   });
+
+  return httpServer;
 }
