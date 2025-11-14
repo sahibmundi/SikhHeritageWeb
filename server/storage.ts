@@ -18,6 +18,89 @@ export interface IStorage {
   getResourcesByCategory(category: string): Promise<Resource[]>;
 }
 
+// Load Gurdwara data from JSON file
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function loadGurdwaraData(): Gurdwara[] {
+  try {
+    const dataPath = path.join(__dirname, "gurdwara-data.json");
+    const rawData = fs.readFileSync(dataPath, "utf-8");
+    const gurdwaras = JSON.parse(rawData) as Array<{
+      id: string;
+      name: string;
+      content: string;
+      pdfFileName: string | null;
+    }>;
+
+    // Manual PDF mapping based on file names in attached_assets
+    const pdfMap: Record<string, string[]> = {
+      "gurdwara-guru-ke-mahil-pa": [],
+      "gurdwara-guru-teg-bahadur-sahib": [],
+      "gurdwara-manji-sahib-patshahi-nauvin": [],
+      "gurdwara-sri-manji-sahib": [],
+      "gurdwara-kotha-sahib-pind-valla": [],
+      "gurdwara-patshahi-nauvin": [],
+      "gurdwara-manji-sahib": [],
+      "gurdwara-dhamdhan-sahib-patshahi-nauvin": ["Dhirba_1763096532057.pdf"],
+      "gurdwara-tharrha-sahib": [],
+      "gurdwara-sri-sadabarat-sahib": [],
+      "gurdwara-sohiana-sahib": [],
+      "gurdwara-sri-chacha-faggu-mall": [],
+      "gurdwara-sri-bari-sangat-sahib": [],
+      "gurdwara-sri-damdama-sahib": [],
+      "gurdwara-sri-guru-teg-bahadur-sahib-munak": [],
+      "gurdwara-sis-ganj-sahib": [],
+      "gurdwara-sis-ganj-sahib-patshahi-nauvin": [],
+      "gurdwara-sahib-tamsimbli": ["Gurdwara Sahib Tamsimbli_1763096532024.pdf"],
+      "gurdwara-kamalpur": ["Kamalpur_1763096532029.pdf"],
+      "gurdwara-aloarkh": ["ਗੁਰਦੁਆਰਾ ਮੰਜੀ ਸਾਹਿਬ ਪਾਤਸ਼ਾਹੀ ਨੌਵੀਂ  Aloarkh_1763096532031.pdf"],
+      "gurdwara-bhagrhana": ["Bhagrhana_1763096532033.pdf"],
+      "gurdwara-nandpur": ["V. Nandpur_1763096532035.pdf"],
+      "gurdwara-railon": ["Railon_1763096532037.pdf"],
+    };
+
+    // Transform and enrich data
+    return gurdwaras.map((g) => {
+      // Extract brief history from content (first 150-200 characters)
+      const contentLines = g.content.split("\n");
+      const firstPara = contentLines[0] || g.content;
+      const briefHistory = firstPara.substring(0, 200).trim() + (firstPara.length > 200 ? "..." : "");
+
+      // Extract location from name (text in parentheses)
+      const locationMatch = g.name.match(/\(([^)]+)\)/);
+      const location = locationMatch ? locationMatch[1] : "";
+
+      // Build PDF assets
+      const pdfFiles = pdfMap[g.id] || [];
+      const pdfAssets = pdfFiles.map((fileName) => ({
+        label: "ਵਧੇਰੇ ਜਾਣਕਾਰੀ",
+        fileName,
+      }));
+
+      return {
+        id: g.id,
+        name: g.name,
+        imageUrl: undefined,
+        briefHistory,
+        fullHistory: g.content,
+        location: {
+          address: location,
+          mapEmbedUrl: undefined,
+        },
+        pdfAssets: pdfAssets.length > 0 ? pdfAssets : undefined,
+      };
+    });
+  } catch (error) {
+    console.error("Error loading gurdwara data:", error);
+    return [];
+  }
+}
+
 export class MemStorage implements IStorage {
   private timeline: TimelineEvent[] = [
     { year: "1621", label: "ਜਨਮ", sectionId: "janm" },

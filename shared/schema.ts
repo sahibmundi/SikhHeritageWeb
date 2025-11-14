@@ -33,17 +33,24 @@ export interface Shabad {
   audioUrl?: string;
 }
 
+// PDF Asset Type
+export interface PdfAsset {
+  label: string;
+  fileName: string;
+}
+
 // Gurdwara Type
 export interface Gurdwara {
   id: string;
   name: string;
-  imageUrl: string;
+  imageUrl?: string;
   briefHistory: string;
   fullHistory: string;
   location: {
     address: string;
-    mapEmbedUrl: string;
+    mapEmbedUrl?: string;
   };
+  pdfAssets?: PdfAsset[];
 }
 
 // Resource Type
@@ -61,5 +68,6 @@ export type {
   BiographySection,
   Shabad,
   Gurdwara,
+  PdfAsset,
   Resource
 };
