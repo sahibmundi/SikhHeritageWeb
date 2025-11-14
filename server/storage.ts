@@ -39,11 +39,11 @@ const gurdwaraChronology: Record<string, { visitDate: string; order: number }> =
   "gurdwara-kotha-sahib-pind-valla": { visitDate: "1665", order: 3 },
   "gurdwara-guru-teg-bahadur-sahib": { visitDate: "1665", order: 4 },
   "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 5 },
-  "gurdwara-patshahi-nauvin": { visitDate: "1665-1666", order: 6 },
-  "gurdwara-manji-sahib": { visitDate: "1666", order: 7 },
-  "gurdwara-dhamdhan-sahib-patshahi-nauvin": { visitDate: "1665", order: 8 },
-  "gurdwara-manji-sahib-patshahi-nauvin-kaithal": { visitDate: "1665", order: 9 },
-  "gurdwara-manji-sahib-patshahi-nauvin-bani": { visitDate: "1665", order: 10 },
+  "gurdwara-dhamdhan-sahib-patshahi-nauvin": { visitDate: "1665", order: 6 },
+  "gurdwara-manji-sahib-patshahi-nauvin-kaithal": { visitDate: "1665", order: 7 },
+  "gurdwara-manji-sahib-patshahi-nauvin-bani": { visitDate: "1665", order: 8 },
+  "gurdwara-patshahi-nauvin": { visitDate: "1665-1666", order: 9 },
+  "gurdwara-manji-sahib": { visitDate: "1666", order: 10 },
 };
 
 function loadGurdwaraData(): Gurdwara[] {
