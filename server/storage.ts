@@ -35,10 +35,10 @@ const __dirname = path.dirname(__filename);
 // Chronological order mapping for Guru Tegh Bahadur Ji's journey
 const gurdwaraChronology: Record<string, { visitDate: string; order: number }> = {
   "gurdwara-guru-ke-mahil-pa": { visitDate: "1621", order: 1 },
-  "gurdwara-guru-teg-bahadur-sahib": { visitDate: "1665", order: 2 },
-  "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 3 },
-  "gurdwara-sri-manji-sahib": { visitDate: "1664", order: 4 },
-  "gurdwara-kotha-sahib-pind-valla": { visitDate: "1665", order: 5 },
+  "gurdwara-sri-manji-sahib": { visitDate: "1664", order: 2 },
+  "gurdwara-kotha-sahib-pind-valla": { visitDate: "1665", order: 3 },
+  "gurdwara-guru-teg-bahadur-sahib": { visitDate: "1665", order: 4 },
+  "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 5 },
   "gurdwara-patshahi-nauvin": { visitDate: "1665-1666", order: 6 },
   "gurdwara-manji-sahib": { visitDate: "1666", order: 7 },
   "gurdwara-dhamdhan-sahib-patshahi-nauvin": { visitDate: "1665", order: 8 },
