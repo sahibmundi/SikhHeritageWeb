@@ -85,5 +85,37 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
+  // Raags endpoints
+  app.get("/api/raags", async (req, res) => {
+    try {
+      const raags = await storage.getRaags();
+      res.json(raags);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch raags" });
+    }
+  });
+
+  app.get("/api/raags/:id", async (req, res) => {
+    try {
+      const raag = await storage.getRaagById(req.params.id);
+      if (!raag) {
+        res.status(404).json({ error: "Raag not found" });
+        return;
+      }
+      res.json(raag);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch raag" });
+    }
+  });
+
+  app.get("/api/raags/:id/shabads", async (req, res) => {
+    try {
+      const shabads = await storage.getShabadsByRaag(req.params.id);
+      res.json(shabads);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch shabads for raag" });
+    }
+  });
+
   return httpServer;
 }

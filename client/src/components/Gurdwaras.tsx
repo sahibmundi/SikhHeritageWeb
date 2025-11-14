@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { MapPin, X } from "lucide-react";
+import { MapPin, X, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { PdfList } from "@/components/PdfViewer";
 import type { Gurdwara } from "@shared/schema";
 
 interface GurdwarasProps {
@@ -52,6 +53,13 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                 <p className="text-sm md:text-base text-foreground/80 line-clamp-3">
                   {gurdwara.briefHistory}
                 </p>
+
+                {gurdwara.visitDate && (
+                  <div className="flex items-center gap-2 text-sm text-primary">
+                    <Calendar className="w-4 h-4" />
+                    <span className="font-medium">ਯਾਤਰਾ: {gurdwara.visitDate}</span>
+                  </div>
+                )}
 
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4" />
@@ -117,6 +125,16 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                     </div>
                   </div>
 
+                  {selectedGurdwara.visitDate && (
+                    <div>
+                      <h4 className="text-xl font-semibold text-foreground mb-4">ਯਾਤਰਾ ਸਮਾਂ:</h4>
+                      <div className="flex items-start gap-3">
+                        <Calendar className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <p className="text-lg font-medium text-primary">{selectedGurdwara.visitDate}</p>
+                      </div>
+                    </div>
+                  )}
+
                   <div>
                     <h4 className="text-xl font-semibold text-foreground mb-4">ਸਥਿਤੀ:</h4>
                     <div className="flex items-start gap-3 mb-4">
@@ -139,6 +157,10 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                       </div>
                     )}
                   </div>
+
+                  {selectedGurdwara.pdfAssets && selectedGurdwara.pdfAssets.length > 0 && (
+                    <PdfList pdfAssets={selectedGurdwara.pdfAssets} />
+                  )}
                 </div>
               </div>
             </div>

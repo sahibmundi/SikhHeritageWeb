@@ -17,6 +17,18 @@ export interface BiographySection {
   content: string;
 }
 
+// Raag Information Type
+export interface RaagInfo {
+  id: string;
+  name: string;
+  nameEnglish: string;
+  time: string;
+  mood: string;
+  significance: string;
+  shabadCount: number;
+  description: string;
+}
+
 // Shabad Type
 export interface Shabad {
   id: string;
@@ -30,7 +42,9 @@ export interface Shabad {
     mood: string;
     significance: string;
   };
+  raagId?: string;
   audioUrl?: string;
+  pageNumber?: number;
 }
 
 // PDF Asset Type
@@ -51,6 +65,8 @@ export interface Gurdwara {
     mapEmbedUrl?: string;
   };
   pdfAssets?: PdfAsset[];
+  visitDate?: string;
+  chronologicalOrder?: number;
 }
 
 // Resource Type
@@ -66,6 +82,7 @@ export interface Resource {
 export type {
   TimelineEvent,
   BiographySection,
+  RaagInfo,
   Shabad,
   Gurdwara,
   PdfAsset,

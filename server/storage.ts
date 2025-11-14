@@ -1,4 +1,4 @@
-import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource } from "@shared/schema";
+import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource, RaagInfo } from "@shared/schema";
 
 export interface IStorage {
   // Biography
@@ -8,6 +8,11 @@ export interface IStorage {
   // Shabads
   getShabads(): Promise<Shabad[]>;
   getShabadById(id: string): Promise<Shabad | null>;
+  getShabadsByRaag(raagId: string): Promise<Shabad[]>;
+  
+  // Raags
+  getRaags(): Promise<RaagInfo[]>;
+  getRaagById(id: string): Promise<RaagInfo | null>;
   
   // Gurdwaras
   getGurdwaras(): Promise<Gurdwara[]>;
@@ -25,6 +30,19 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Chronological order mapping for Guru Tegh Bahadur Ji's journey
+const gurdwaraChronology: Record<string, { visitDate: string; order: number }> = {
+  "gurdwara-guru-ke-mahil-pa": { visitDate: "1621", order: 1 },
+  "gurdwara-guru-teg-bahadur-sahib": { visitDate: "1665", order: 2 },
+  "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 3 },
+  "gurdwara-sri-manji-sahib": { visitDate: "1664", order: 4 },
+  "gurdwara-kotha-sahib-pind-valla": { visitDate: "1665", order: 5 },
+  "gurdwara-patshahi-nauvin": { visitDate: "1665-1666", order: 6 },
+  "gurdwara-manji-sahib": { visitDate: "1666", order: 7 },
+  "gurdwara-dhamdhan-sahib-patshahi-nauvin": { visitDate: "1665", order: 8 },
+  "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 9 },
+};
 
 function loadGurdwaraData(): Gurdwara[] {
   try {
@@ -77,6 +95,8 @@ function loadGurdwaraData(): Gurdwara[] {
         fileName,
       }));
 
+      const chronology = gurdwaraChronology[g.id];
+      
       return {
         id: g.id,
         name: g.name,
@@ -88,15 +108,22 @@ function loadGurdwaraData(): Gurdwara[] {
           mapEmbedUrl: undefined,
         },
         pdfAssets: pdfAssets.length > 0 ? pdfAssets : undefined,
+        visitDate: chronology?.visitDate,
+        chronologicalOrder: chronology?.order,
       };
-    });
+    })
+    .sort((a, b) => (a.chronologicalOrder || 999) - (b.chronologicalOrder || 999));
   } catch (error) {
     console.error("Error loading gurdwara data:", error);
     return [];
   }
 }
 
+import { raags } from "./raags-data";
+
 export class MemStorage implements IStorage {
+  private raags: RaagInfo[] = raags;
+  
   private timeline: TimelineEvent[] = [
     { year: "1621", label: "ਜਨਮ", sectionId: "janm" },
     { year: "1635", label: "ਕਰਤਾਰਪੁਰ ਦੀ ਲੜਾਈ", sectionId: "kartarpur" },
@@ -273,6 +300,18 @@ export class MemStorage implements IStorage {
 
   async getResourcesByCategory(category: string): Promise<Resource[]> {
     return this.resources.filter(r => r.category === category);
+  }
+
+  async getRaags(): Promise<RaagInfo[]> {
+    return this.raags;
+  }
+
+  async getRaagById(id: string): Promise<RaagInfo | null> {
+    return this.raags.find(r => r.id === id) || null;
+  }
+
+  async getShabadsByRaag(raagId: string): Promise<Shabad[]> {
+    return this.shabads.filter(s => s.raagId === raagId);
   }
 }
 
