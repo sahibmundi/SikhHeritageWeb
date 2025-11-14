@@ -27,6 +27,7 @@ export interface IStorage {
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { raags } from "./raags-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,7 +42,8 @@ const gurdwaraChronology: Record<string, { visitDate: string; order: number }> =
   "gurdwara-patshahi-nauvin": { visitDate: "1665-1666", order: 6 },
   "gurdwara-manji-sahib": { visitDate: "1666", order: 7 },
   "gurdwara-dhamdhan-sahib-patshahi-nauvin": { visitDate: "1665", order: 8 },
-  "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 9 },
+  "gurdwara-manji-sahib-patshahi-nauvin-kaithal": { visitDate: "1665", order: 9 },
+  "gurdwara-manji-sahib-patshahi-nauvin-bani": { visitDate: "1665", order: 10 },
 };
 
 function loadGurdwaraData(): Gurdwara[] {
