@@ -43,7 +43,7 @@ export function Footer() {
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors hover-elevate px-2 py-1 rounded-md text-left"
                 data-testid="link-footer-gurdwaras"
               >
-                ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
+                ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
               </button>
               <button
                 onClick={() => scrollToSection("resources")}

@@ -86,7 +86,7 @@ export function Header() {
                   className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
                   data-testid="link-gurdwaras"
                 >
-                  ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
+                  ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
                 </button>
                 <button
                   onClick={() => scrollToSection("resources")}
@@ -162,7 +162,7 @@ export function Header() {
                   className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
                   data-testid="link-gurdwaras-mobile"
                 >
-                  ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
+                  ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
                 </button>
                 <button
                   onClick={() => scrollToSection("resources")}
