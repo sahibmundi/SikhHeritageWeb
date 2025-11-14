@@ -27,7 +27,7 @@ export interface IStorage {
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { raags } from "./raags-data.js";
+import { raags as raagsList } from "./raags-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -121,10 +121,8 @@ function loadGurdwaraData(): Gurdwara[] {
   }
 }
 
-import { raags } from "./raags-data";
-
 export class MemStorage implements IStorage {
-  private raags: RaagInfo[] = raags;
+  private raags: RaagInfo[] = raagsList;
   
   private timeline: TimelineEvent[] = [
     { year: "1621", label: "ਜਨਮ", sectionId: "janm" },
@@ -192,28 +190,34 @@ export class MemStorage implements IStorage {
       title: "ਸਲੋਕ ਮਹਲਾ ੯",
       gurmukhi: `ਚਿੰਤਾ ਤਾ ਕੀ ਕੀਜੀਐ ਜੋ ਅਨਹੋਨੀ ਹੋਇ।
 ਇਹੁ ਮਾਰਗੁ ਸੰਸਾਰ ਕੋ ਨਾਨਕੁ ਥਿਰੁ ਨਹੀ ਕੋਇ।`,
-      meaning: "ਉਸ ਗੱਲ ਦੀ ਚਿੰਤਾ ਕਰੋ ਜੋ ਅਨਹੋਣੀ ਹੋਵੇ। ਇਹ ਸੰਸਾਰ ਦਾ ਰਾਹ ਅਜਿਹਾ ਹੈ, ਹੇ ਨਾਨਕ, ਕੋਈ ਵੀ ਸਦਾ ਨਹੀਂ ਰਹਿੰਦਾ।",
+      meaning: "Only worry about that which is unexpected. This is the way of the world, O Nanak, nothing is permanent here.",
       teeka: "ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ: ਇਸ ਸ਼ਬਦ ਵਿਚ ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜੀਵਨ ਅਸਥਾਈ ਹੈ ਅਤੇ ਸਾਨੂੰ ਉਹਨਾਂ ਗੱਲਾਂ ਦੀ ਫਿਕਰ ਨਹੀਂ ਕਰਨੀ ਚਾਹੀਦੀ ਜੋ ਸਾਡੇ ਵੱਸ ਵਿਚ ਨਹੀਂ ਹਨ। ਸੰਸਾਰ ਵਿਚ ਕੋਈ ਵੀ ਚੀਜ਼ ਸਥਾਈ ਨਹੀਂ, ਇਸ ਲਈ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਵਿਚ ਜੁੜਨਾ ਹੀ ਅਸਲ ਮਨੋਰਥ ਹੈ।",
       raag: {
         name: "ਸਲੋਕ ਮਹਲਾ ੯",
         time: "ਕੋਈ ਖਾਸ ਸਮਾਂ ਨਹੀਂ",
         mood: "ਸ਼ਾਂਤ ਅਤੇ ਗਿਆਨਵਾਨ",
         significance: "ਇਹ ਸਲੋਕ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹੈ ਅਤੇ ਜੀਵਨ ਦੀ ਅਸਥਾਈਤਾ ਅਤੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਦੇ ਮਹੱਤਵ ਬਾਰੇ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
-      }
+      },
+      raagId: "gauri",
+      audioUrl: "https://www.searchgurbani.com/shabad_audio/02/5830/51890/2.mp3",
+      pageNumber: 1428
     },
     {
       id: "shabad-2",
       title: "ਮਨ ਰੇ ਨਾਮੁ ਜਪਤ ਸੁਖੁ ਹੋਇ",
       gurmukhi: `ਮਨ ਰੇ ਨਾਮੁ ਜਪਤ ਸੁਖੁ ਹੋਇ।
 ਬਿਨੁ ਹਰਿ ਭਜਨ ਜੀਵਨੁ ਸਭੁ ਸੋਇ।`,
-      meaning: "ਹੇ ਮਨ, ਨਾਮ ਜਪਣ ਨਾਲ ਸੁਖ ਮਿਲਦਾ ਹੈ। ਹਰੀ ਦੇ ਭਜਨ ਬਿਨਾਂ ਸਾਰਾ ਜੀਵਨ ਸੁੰਨ ਹੈ।",
+      meaning: "O mind, by chanting the Name, peace is obtained. Without meditating on the Lord, the whole life is wasted.",
       teeka: "ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ: ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਸੰਬੋਧਨ ਕਰ ਕੇ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਸਿਮਰਨ ਹੀ ਅਸਲ ਸੁਖ ਹੈ। ਬਿਨਾਂ ਭਜਨ ਦੇ ਜੀਵਨ ਵਿਅਰਥ ਹੈ, ਜਿਵੇਂ ਨੀਂਦ ਵਿੱਚ ਕੋਈ ਨਾ ਜਾਣੇ ਕਿ ਕੀ ਹੋ ਰਿਹਾ ਹੈ।",
       raag: {
         name: "ਗਉੜੀ",
-        time: "ਸਵੇਰ ਦਾ ਸਮਾਂ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
         mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਇੱਕ ਗੰਭੀਰ ਰਾਗ ਹੈ ਜੋ ਸਵੇਰੇ ਦੇ ਸਮੇਂ ਗਾਇਆ ਜਾਂਦਾ ਹੈ। ਇਹ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਅਤੇ ਇਕਾਗਰ ਕਰਦਾ ਹੈ।"
-      }
+        significance: "ਰਾਗ ਗਉੜੀ ਇੱਕ ਗੰਭੀਰ ਰਾਗ ਹੈ ਜੋ ਸ਼ਾਮ ਦੇ ਸਮੇਂ ਗਾਇਆ ਜਾਂਦਾ ਹੈ। ਇਹ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਅਤੇ ਇਕਾਗਰ ਕਰਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/3711/35710/1.mp3",
+      pageNumber: 219
     },
     {
       id: "shabad-3",
@@ -221,14 +225,68 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਜੋ ਨਰੁ ਦੁਖ ਵਿਚਿ ਦੁਖੁ ਨਹੀ ਮਾਨੈ।
 ਸੁਖ ਸਨੇਹੁ ਅਰੁ ਭੈ ਨਹੀ ਜਾ ਕੈ।
 ਕੰਚਨ ਮਾਟੀ ਮਾਨੈ।`,
-      meaning: "ਜੋ ਮਨੁੱਖ ਦੁਖ ਵਿੱਚ ਦੁਖੀ ਨਹੀਂ ਹੁੰਦਾ, ਸੁੱਖ ਵਿੱਚ ਮੋਹ ਨਹੀਂ ਰਖਦਾ, ਜਿਸਨੂੰ ਕੋਈ ਭੈ ਨਹੀਂ, ਅਤੇ ਜੋ ਸੋਨੇ ਅਤੇ ਮਿੱਟੀ ਨੂੰ ਬਰਾਬਰ ਮੰਨਦਾ ਹੈ।",
+      meaning: "One who does not feel pain in suffering, who is not attached to pleasure, who has no fear, and who sees gold and dust as the same.",
       teeka: "ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ: ਇਸ ਸ਼ਬਦ ਵਿੱਚ ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜਿਹੜਾ ਮਨੁੱਖ ਦੁੱਖਾਂ-ਸੁੱਖਾਂ ਵਿੱਚ ਇਕੋ ਜਿਹਾ ਰਹਿੰਦਾ ਹੈ, ਜਿਸਨੂੰ ਮਾਇਆ ਦਾ ਮੋਹ ਨਹੀਂ, ਜੋ ਧਨ-ਦੌਲਤ ਅਤੇ ਮਿੱਟੀ ਵਿੱਚ ਕੋਈ ਫਰਕ ਨਹੀਂ ਸਮਝਦਾ - ਉਹ ਅਸਲ ਵਿੱਚ ਗਿਆਨਵਾਨ ਹੈ।",
       raag: {
         name: "ਸੋਰਠਿ",
-        time: "ਦੁਪਹਿਰ ਦਾ ਸਮਾਂ",
+        time: "ਰਾਤ ਦਾ ਦੂਜਾ ਪਹਿਰ",
         mood: "ਗੰਭੀਰ ਅਤੇ ਵੈਰਾਗੀ",
         significance: "ਰਾਗ ਸੋਰਠਿ ਵੈਰਾਗ ਅਤੇ ਨਿਰਲਿਪਤਤਾ ਦਾ ਭਾਵ ਜਗਾਉਂਦਾ ਹੈ। ਇਹ ਰਾਗ ਮਨ ਨੂੰ ਮਾਇਆ ਤੋਂ ਉਪਰਾਮ ਕਰਨ ਵਿੱਚ ਸਹਾਈ ਹੈ।"
-      }
+      },
+      raagId: "sorath",
+      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/4160/40100/1.mp3",
+      pageNumber: 633
+    },
+    {
+      id: "shabad-4",
+      title: "ਕਬੀਰ ਮਨੁ ਨਿਰਮਲੁ ਭਇਆ",
+      gurmukhi: `ਕਬੀਰ ਮਨੁ ਨਿਰਮਲੁ ਭਇਆ ਜੈਸਾ ਗੰਗਾ ਨੀਰੁ।
+ਪਾਛੈ ਲਾਗੋ ਹਰਿ ਫਿਰੈ ਕਹਤ ਕਬੀਰ ਕਬੀਰ।`,
+      meaning: "Kabir, my mind has become pure, like the water of the Ganges. The Lord follows after me, calling 'Kabir! Kabir!'",
+      teeka: "ਜਦੋਂ ਮਨੁੱਖ ਦਾ ਮਨ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਪਰਮਾਤਮਾ ਆਪ ਉਸ ਦੇ ਪਿੱਛੇ ਆਉਂਦਾ ਹੈ। ਗੁਰੂ ਜੀ ਦੱਸਦੇ ਹਨ ਕਿ ਸੁੱਚੇ ਮਨ ਨਾਲ ਪਰਮਾਤਮਾ ਦੀ ਪ੍ਰਾਪਤੀ ਹੁੰਦੀ ਹੈ।",
+      raag: {
+        name: "ਆਸਾ",
+        time: "ਰਾਤ ਦਾ ਚੌਥਾ ਪਹਿਰ",
+        mood: "ਆਸ, ਆਸ਼ਾਵਾਦੀ",
+        significance: "ਰਾਗ ਆਸਾ ਆਸ਼ਾ ਅਤੇ ਉਮੀਦ ਦਾ ਰਾਗ ਹੈ।"
+      },
+      raagId: "asa",
+      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/3841/36990/1.mp3",
+      pageNumber: 331
+    },
+    {
+      id: "shabad-5",
+      title: "ਮਿਤ੍ਰ ਪਿਆਰੇ ਨੂੰ",
+      gurmukhi: `ਮਿਤ੍ਰ ਪਿਆਰੇ ਨੂੰ ਹਾਲ ਮੁਰੀਦਾਂ ਦਾ ਕਹਿਣਾ।
+ਤੁਧੁ ਬਿਨੁ ਰੋਗੁ ਰਜਾਈਆਂ ਦਾ ਓਢਣ ਨਾਗ ਨਿਵਾਸਾਂ ਦੇ ਰਹਿਣਾ।`,
+      meaning: "Tell my Beloved Friend, the condition of His humble disciples. Without You, the comfort of the bed is a disease, and the blankets are like snakes.",
+      teeka: "ਗੁਰੂ ਜੀ ਪਰਮਾਤਮਾ ਨੂੰ ਮਿੱਤਰ ਕਹਿ ਕੇ ਸੰਬੋਧਨ ਕਰਦੇ ਹਨ ਅਤੇ ਦੱਸਦੇ ਹਨ ਕਿ ਉਸ ਤੋਂ ਬਿਨਾਂ ਸਾਰੇ ਸੁੱਖ ਦੁੱਖ ਬਣ ਜਾਂਦੇ ਹਨ। ਇਹ ਪਰਮਾਤਮਾ ਨਾਲ ਪ੍ਰੇਮ ਅਤੇ ਵਿਛੋੜੇ ਦਾ ਵਰਣਨ ਹੈ।",
+      raag: {
+        name: "ਬਿਲਾਵਲ",
+        time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
+        significance: "ਰਾਗ ਬਿਲਾਵਲ ਸਵੇਰੇ ਦਾ ਰਾਗ ਹੈ ਜੋ ਨਵੀਂ ਸ਼ੁਰੂਆਤ ਦਾ ਭਾਵ ਦਿੰਦਾ ਹੈ।"
+      },
+      raagId: "bilawal",
+      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/4658/45370/1.mp3",
+      pageNumber: 819
+    },
+    {
+      id: "shabad-6",
+      title: "ਰਾਮ ਨਾਮੁ ਜਪਿ ਜੀਵਣੁ ਮਰਣੁ",
+      gurmukhi: `ਰਾਮ ਨਾਮੁ ਜਪਿ ਜੀਵਣੁ ਮਰਣੁ।
+ਰਾਮ ਨਾਮੁ ਜਪਿ ਸਰਬ ਸੁਖ ਪੂਰਣ।`,
+      meaning: "Chant the Lord's Name in life and death. Chanting the Lord's Name, all peace is found complete.",
+      teeka: "ਗੁਰੂ ਜੀ ਦੱਸਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਜੀਵਨ ਅਤੇ ਮੌਤ ਦੋਵਾਂ ਵਿੱਚ ਸਹਾਰਾ ਹੈ। ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਹੀ ਸੰਪੂਰਨ ਸੁਖ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ।",
+      raag: {
+        name: "ਧਨਾਸਰੀ",
+        time: "ਦਿਨ ਦਾ ਤੀਜਾ ਪਹਿਰ",
+        mood: "ਮਧੁਰ, ਪੁਰਾਣਾ",
+        significance: "ਰਾਗ ਧਨਾਸਰੀ ਪਰਮਾਤਮਾ ਦੀ ਸਿਫਤਿ ਸਾਲਾਹ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।"
+      },
+      raagId: "dhanasri",
+      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/3354/32360/1.mp3",
+      pageNumber: 685
     }
   ];
 

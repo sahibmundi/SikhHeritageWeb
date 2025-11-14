@@ -77,14 +77,3 @@ export interface Resource {
   pdfUrl: string;
   category: string;
 }
-
-// Export types for use in components
-export type {
-  TimelineEvent,
-  BiographySection,
-  RaagInfo,
-  Shabad,
-  Gurdwara,
-  PdfAsset,
-  Resource
-};

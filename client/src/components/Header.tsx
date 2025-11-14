@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "wouter";
 
 export function Header() {
+  const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,34 +65,49 @@ export function Header() {
           </button>
 
           <nav className="hidden md:flex items-center gap-6">
-            <button
-              onClick={() => scrollToSection("biography")}
-              className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
-              data-testid="link-biography"
-            >
-              ਜੀਵਨੀ
-            </button>
-            <button
-              onClick={() => scrollToSection("shabads")}
-              className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
-              data-testid="link-shabads"
-            >
-              ਬਾਣੀ ਅਤੇ ਰਾਗ
-            </button>
-            <button
-              onClick={() => scrollToSection("gurdwaras")}
-              className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
-              data-testid="link-gurdwaras"
-            >
-              ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
-            </button>
-            <button
-              onClick={() => scrollToSection("resources")}
-              className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
-              data-testid="link-resources"
-            >
-              ਸਰੋਤ
-            </button>
+            {location === "/" ? (
+              <>
+                <button
+                  onClick={() => scrollToSection("biography")}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
+                  data-testid="link-biography"
+                >
+                  ਜੀਵਨੀ
+                </button>
+                <button
+                  onClick={() => scrollToSection("shabads")}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
+                  data-testid="link-shabads"
+                >
+                  ਬਾਣੀ
+                </button>
+                <button
+                  onClick={() => scrollToSection("gurdwaras")}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
+                  data-testid="link-gurdwaras"
+                >
+                  ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
+                </button>
+                <button
+                  onClick={() => scrollToSection("resources")}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md"
+                  data-testid="link-resources"
+                >
+                  ਸਰੋਤ
+                </button>
+              </>
+            ) : (
+              <Link href="/">
+                <button className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md" data-testid="link-home-nav">
+                  ਮੁੱਖ ਪੰਨਾ
+                </button>
+              </Link>
+            )}
+            <Link href="/raags">
+              <button className="text-base font-medium text-foreground hover:text-primary transition-colors hover-elevate px-3 py-2 rounded-md" data-testid="link-raags">
+                ਰਾਗ
+              </button>
+            </Link>
             <Button
               variant="ghost"
               size="icon"
@@ -124,34 +141,49 @@ export function Header() {
 
         {isMenuOpen && (
           <nav className="md:hidden pb-4 space-y-2" data-testid="mobile-menu">
-            <button
-              onClick={() => scrollToSection("biography")}
-              className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
-              data-testid="link-biography-mobile"
-            >
-              ਜੀਵਨੀ
-            </button>
-            <button
-              onClick={() => scrollToSection("shabads")}
-              className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
-              data-testid="link-shabads-mobile"
-            >
-              ਬਾਣੀ ਅਤੇ ਰਾਗ
-            </button>
-            <button
-              onClick={() => scrollToSection("gurdwaras")}
-              className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
-              data-testid="link-gurdwaras-mobile"
-            >
-              ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
-            </button>
-            <button
-              onClick={() => scrollToSection("resources")}
-              className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
-              data-testid="link-resources-mobile"
-            >
-              ਸਰੋਤ
-            </button>
+            {location === "/" ? (
+              <>
+                <button
+                  onClick={() => scrollToSection("biography")}
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                  data-testid="link-biography-mobile"
+                >
+                  ਜੀਵਨੀ
+                </button>
+                <button
+                  onClick={() => scrollToSection("shabads")}
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                  data-testid="link-shabads-mobile"
+                >
+                  ਬਾਣੀ
+                </button>
+                <button
+                  onClick={() => scrollToSection("gurdwaras")}
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                  data-testid="link-gurdwaras-mobile"
+                >
+                  ਗੁਰਦੁਆਰੇ ਸਾਹਿਬ
+                </button>
+                <button
+                  onClick={() => scrollToSection("resources")}
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                  data-testid="link-resources-mobile"
+                >
+                  ਸਰੋਤ
+                </button>
+              </>
+            ) : (
+              <Link href="/">
+                <button className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors" data-testid="link-home-mobile">
+                  ਮੁੱਖ ਪੰਨਾ
+                </button>
+              </Link>
+            )}
+            <Link href="/raags">
+              <button className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors" data-testid="link-raags-mobile">
+                ਰਾਗ
+              </button>
+            </Link>
           </nav>
         )}
       </div>
