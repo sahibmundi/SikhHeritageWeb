@@ -79,6 +79,20 @@ function loadGurdwaraData(): Gurdwara[] {
       "gurdwara-sis-ganj-sahib-patshahi-nauvin": ["ਗੁਰਦੁਆਰਾ ਅਕੋਈ ਸਾਹਿਬ_1763096532043.pdf", "ਗੁਰਦੁਆਰਾ ਦੁੱਖ ਨਿਵਾਰਨ ਸਾਹਿਬ ਪਟਿਆਲਾ_1763096532045.pdf"],
     };
 
+    // Image mapping for gurdwaras
+    const imageMap: Record<string, string> = {
+      "gurdwara-guru-ke-mahil-pa": "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
+      "gurdwara-sri-manji-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_e4790ed3.jpg",
+      "gurdwara-kotha-sahib-pind-valla": "/attached_assets/stock_images/historic_sikh_gurdwa_ed04d20f.jpg",
+      "gurdwara-guru-teg-bahadur-sahib": "/attached_assets/stock_images/golden_temple_amrits_b2dcace7.jpg",
+      "gurdwara-manji-sahib-patshahi-nauvin": "/attached_assets/stock_images/historic_sikh_gurdwa_93551c79.jpg",
+      "gurdwara-dhamdhan-sahib-patshahi-nauvin": "/attached_assets/stock_images/historic_sikh_gurdwa_31e75390.jpg",
+      "gurdwara-manji-sahib-patshahi-nauvin-kaithal": "/attached_assets/stock_images/historic_sikh_gurdwa_18088cc8.jpg",
+      "gurdwara-manji-sahib-patshahi-nauvin-bani": "/attached_assets/stock_images/golden_temple_amrits_e2318cb3.jpg",
+      "gurdwara-patshahi-nauvin": "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
+      "gurdwara-manji-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_e4790ed3.jpg",
+    };
+
     // Transform and enrich data
     return gurdwaras.map((g) => {
       // Extract brief history from content (first 150-200 characters)
@@ -102,7 +116,7 @@ function loadGurdwaraData(): Gurdwara[] {
       return {
         id: g.id,
         name: g.name,
-        imageUrl: undefined,
+        imageUrl: imageMap[g.id] || "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
         briefHistory,
         fullHistory: g.content,
         location: {
