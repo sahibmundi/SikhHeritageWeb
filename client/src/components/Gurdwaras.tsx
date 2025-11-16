@@ -76,7 +76,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
               transition={{ duration: 0.3 }}
             >
               <Card 
-                className="overflow-hidden shadow-3d-hover glow-border transition-all cursor-pointer h-full group relative"
+                className="shadow-3d-hover glow-border transition-all cursor-pointer h-full group relative"
                 onClick={() => setSelectedGurdwara(gurdwara)}
                 data-testid={`card-gurdwara-${gurdwara.id}`}
               >
@@ -85,7 +85,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                 />
                 
                 {gurdwara.imageUrl && (
-                  <div className="aspect-video overflow-hidden bg-muted relative">
+                  <div className="aspect-video overflow-hidden bg-muted relative rounded-t-lg">
                     <motion.img
                       src={gurdwara.imageUrl}
                       alt={gurdwara.name}
