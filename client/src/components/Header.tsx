@@ -114,6 +114,21 @@ export function Header() {
                   />
                 </motion.button>
                 <motion.button
+                  onClick={() => scrollToSection("raags")}
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
+                  data-testid="link-raags"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="relative z-10">ਰਾਗ</span>
+                  <motion.div 
+                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+                <motion.button
                   onClick={() => scrollToSection("gurdwaras")}
                   className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
                   data-testid="link-gurdwaras"
@@ -136,21 +151,6 @@ export function Header() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">ਸਰੋਤ</span>
-                  <motion.div 
-                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.button>
-                <motion.button
-                  onClick={() => scrollToSection("raags")}
-                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
-                  data-testid="link-raags"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="relative z-10">ਰਾਗ</span>
                   <motion.div 
                     className="absolute inset-0 bg-sidebar-accent rounded-lg"
                     initial={{ scale: 0, opacity: 0 }}
@@ -235,6 +235,14 @@ export function Header() {
                     ਬਾਣੀ
                   </motion.button>
                   <motion.button
+                    onClick={() => scrollToSection("raags")}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
+                    data-testid="link-raags-mobile"
+                    whileHover={{ x: 8 }}
+                  >
+                    ਰਾਗ
+                  </motion.button>
+                  <motion.button
                     onClick={() => scrollToSection("gurdwaras")}
                     className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
                     data-testid="link-gurdwaras-mobile"
@@ -249,14 +257,6 @@ export function Header() {
                     whileHover={{ x: 8 }}
                   >
                     ਸਰੋਤ
-                  </motion.button>
-                  <motion.button
-                    onClick={() => scrollToSection("raags")}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
-                    data-testid="link-raags-mobile"
-                    whileHover={{ x: 8 }}
-                  >
-                    ਰਾਗ
                   </motion.button>
                 </>
               ) : (

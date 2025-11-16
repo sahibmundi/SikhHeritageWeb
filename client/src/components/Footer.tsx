@@ -36,7 +36,14 @@ export function Footer() {
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors hover-elevate px-2 py-1 rounded-md text-left"
                 data-testid="link-footer-shabads"
               >
-                ਬਾਣੀ ਅਤੇ ਰਾਗ
+                ਬਾਣੀ
+              </button>
+              <button
+                onClick={() => scrollToSection("raags")}
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors hover-elevate px-2 py-1 rounded-md text-left"
+                data-testid="link-footer-raags"
+              >
+                ਰਾਗ
               </button>
               <button
                 onClick={() => scrollToSection("gurdwaras")}

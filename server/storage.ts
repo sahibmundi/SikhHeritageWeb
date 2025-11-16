@@ -34,16 +34,17 @@ const __dirname = path.dirname(__filename);
 
 // Chronological order mapping for Guru Tegh Bahadur Ji's journey
 const gurdwaraChronology: Record<string, { visitDate: string; order: number }> = {
-  "gurdwara-guru-ke-mahil-pa": { visitDate: "1621", order: 1 },
-  "gurdwara-sri-manji-sahib": { visitDate: "1664", order: 2 },
-  "gurdwara-kotha-sahib-pind-valla": { visitDate: "1665", order: 3 },
-  "gurdwara-guru-teg-bahadur-sahib": { visitDate: "1665", order: 4 },
-  "gurdwara-manji-sahib-patshahi-nauvin": { visitDate: "1665", order: 5 },
-  "gurdwara-dhamdhan-sahib-patshahi-nauvin": { visitDate: "1665", order: 6 },
-  "gurdwara-manji-sahib-patshahi-nauvin-kaithal": { visitDate: "1665", order: 7 },
-  "gurdwara-manji-sahib-patshahi-nauvin-bani": { visitDate: "1665", order: 8 },
-  "gurdwara-patshahi-nauvin": { visitDate: "1665-1666", order: 9 },
-  "gurdwara-manji-sahib": { visitDate: "1666", order: 10 },
+  "gurdwara-guru-ke-mahil": { visitDate: "1 ਅਪ੍ਰੈਲ 1621", order: 1 },
+  "gurdwara-sahib-bakala": { visitDate: "1644-1664", order: 2 },
+  "gurdwara-anandpur-sahib": { visitDate: "1665", order: 3 },
+  "gurdwara-tegh-bahadur-sahib-kurukshetra": { visitDate: "1665", order: 4 },
+  "takht-sri-patna-sahib": { visitDate: "22 ਦਸੰਬਰ 1666", order: 5 },
+  "gurdwara-damdama-sahib-dhubri": { visitDate: "1669", order: 6 },
+  "gurdwara-tegh-bahadur-sahib-bahadurgarh": { visitDate: "ਜੂਨ-ਸਤੰਬਰ 1675", order: 7 },
+  "gurdwara-damdama-sahib-talwandi-sabo": { visitDate: "1665-1675", order: 8 },
+  "gurdwara-sis-ganj-sahib-delhi": { visitDate: "24 ਨਵੰਬਰ 1675", order: 9 },
+  "gurdwara-rakab-ganj-sahib": { visitDate: "24 ਨਵੰਬਰ 1675", order: 10 },
+  "gurdwara-sis-ganj-sahib-anandpur": { visitDate: "17 ਨਵੰਬਰ 1675", order: 11 },
 };
 
 function loadGurdwaraData(): Gurdwara[] {
@@ -60,37 +61,23 @@ function loadGurdwaraData(): Gurdwara[] {
     // Manual PDF mapping based on file names in attached_assets
     // Mapping gurdwara IDs from JSON to available PDF files
     const pdfMap: Record<string, string[]> = {
-      "gurdwara-guru-ke-mahil-pa": ["Bhagrhana_1763096532033.pdf"],
-      "gurdwara-guru-teg-bahadur-sahib": ["Mirjapur_1763096532062.pdf"],
-      "gurdwara-manji-sahib-patshahi-nauvin": ["Railon_1763096532037.pdf"],
-      "gurdwara-sri-manji-sahib": ["Gurdwara Maithan Sahib Agra_1763096532064.pdf"],
-      "gurdwara-kotha-sahib-pind-valla": ["V. Nandpur_1763096532035.pdf"],
-      "gurdwara-patshahi-nauvin": ["Moti Bagh Patiala_1763096532041.pdf"],
-      "gurdwara-manji-sahib": ["Gurdwara Sahib Tamsimbli_1763096532024.pdf"],
-      "gurdwara-dhamdhan-sahib-patshahi-nauvin": ["Dhirba_1763096532057.pdf"],
-      "gurdwara-tharrha-sahib-sahib": ["ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਪਾਤਸ਼ਾਹੀ ਨੌਵੀਂ ਬਹਾਦਰਗੜ੍ਹ _1763096532039.pdf", "ਕਿਲ੍ਹਾ, ਬਹਾਦਰਗੜ੍ਹ _1763096532051.pdf"],
-      "gurdwara-sri-sadabarat-sahib": ["Kamalpur_1763096532029.pdf"],
-      "gurdwara-sohiana-sahib": ["gharancho_1763096532053.pdf"],
-      "gurdwara-sri-chacha-faggu-mall": ["Gandhua_1763096532049.pdf"],
-      "gurdwara-sri-bari-sangat-sahib": ["Gurne Kalan_1763096532055.pdf"],
-      "gurdwara-sri-damdama-sahib-bari": ["ਗੁਰਦੁਆਰਾ ਮੰਜੀ ਸਾਹਿਬ ਪਾਤਸ਼ਾਹੀ ਨੌਵੀਂ  Aloarkh_1763096532031.pdf"],
-      "gurdwara-sri-guru-teg-bahadur-sahib": ["Gaga_1763096532047.pdf", "Gurdwara Tap Asthan Sahib ( UP)_1763096532060.pdf"],
-      "gurdwara-sis-ganj-sahib": ["Ghanor Jatta_1763096532058.pdf"],
-      "gurdwara-sis-ganj-sahib-patshahi-nauvin": ["ਗੁਰਦੁਆਰਾ ਅਕੋਈ ਸਾਹਿਬ_1763096532043.pdf", "ਗੁਰਦੁਆਰਾ ਦੁੱਖ ਨਿਵਾਰਨ ਸਾਹਿਬ ਪਟਿਆਲਾ_1763096532045.pdf"],
+      "gurdwara-tegh-bahadur-sahib-bahadurgarh": ["ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਪਾਤਸ਼ਾਹੀ ਨੌਵੀਂ ਬਹਾਦਰਗੜ੍ਹ _1763096532039.pdf", "ਕਿਲ੍ਹਾ, ਬਹਾਦਰਗੜ੍ਹ _1763096532051.pdf"],
+      "gurdwara-damdama-sahib-talwandi-sabo": ["Gurdwara Sahib Tamsimbli_1763096532024.pdf"],
     };
 
     // Image mapping for gurdwaras
     const imageMap: Record<string, string> = {
-      "gurdwara-guru-ke-mahil-pa": "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
-      "gurdwara-sri-manji-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_e4790ed3.jpg",
-      "gurdwara-kotha-sahib-pind-valla": "/attached_assets/stock_images/historic_sikh_gurdwa_ed04d20f.jpg",
-      "gurdwara-guru-teg-bahadur-sahib": "/attached_assets/stock_images/golden_temple_amrits_b2dcace7.jpg",
-      "gurdwara-manji-sahib-patshahi-nauvin": "/attached_assets/stock_images/historic_sikh_gurdwa_93551c79.jpg",
-      "gurdwara-dhamdhan-sahib-patshahi-nauvin": "/attached_assets/stock_images/historic_sikh_gurdwa_31e75390.jpg",
-      "gurdwara-manji-sahib-patshahi-nauvin-kaithal": "/attached_assets/stock_images/historic_sikh_gurdwa_18088cc8.jpg",
-      "gurdwara-manji-sahib-patshahi-nauvin-bani": "/attached_assets/stock_images/golden_temple_amrits_e2318cb3.jpg",
-      "gurdwara-patshahi-nauvin": "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
-      "gurdwara-manji-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_e4790ed3.jpg",
+      "gurdwara-guru-ke-mahil": "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
+      "gurdwara-sis-ganj-sahib-delhi": "/attached_assets/stock_images/historic_sikh_gurdwa_e4790ed3.jpg",
+      "gurdwara-rakab-ganj-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_ed04d20f.jpg",
+      "gurdwara-sis-ganj-sahib-anandpur": "/attached_assets/stock_images/golden_temple_amrits_b2dcace7.jpg",
+      "gurdwara-anandpur-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_93551c79.jpg",
+      "gurdwara-sahib-bakala": "/attached_assets/stock_images/historic_sikh_gurdwa_31e75390.jpg",
+      "takht-sri-patna-sahib": "/attached_assets/stock_images/historic_sikh_gurdwa_18088cc8.jpg",
+      "gurdwara-damdama-sahib-dhubri": "/attached_assets/stock_images/golden_temple_amrits_e2318cb3.jpg",
+      "gurdwara-tegh-bahadur-sahib-kurukshetra": "/attached_assets/stock_images/golden_temple_amrits_5a97710a.jpg",
+      "gurdwara-tegh-bahadur-sahib-bahadurgarh": "/attached_assets/stock_images/historic_sikh_gurdwa_e4790ed3.jpg",
+      "gurdwara-damdama-sahib-talwandi-sabo": "/attached_assets/stock_images/historic_sikh_gurdwa_ed04d20f.jpg",
     };
 
     // Transform and enrich data

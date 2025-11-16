@@ -48,9 +48,9 @@ export default function Home() {
       <Hero />
       <Biography timeline={timeline} sections={biographySections} />
       <Shabads shabads={shabads} />
+      <RaagsSection />
       <Gurdwaras gurdwaras={gurdwaras} />
       <Resources resources={resources} />
-      <RaagsSection />
       <Footer />
     </div>
   );
