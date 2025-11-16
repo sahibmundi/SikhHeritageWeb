@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, X, Calendar, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,263 +11,253 @@ interface GurdwarasProps {
 }
 
 export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
-  const [selectedGurdwara, setSelectedGurdwara] = useState<Gurdwara | null>(null);
+  const [selectedGurdwara, setSelectedGurdwara] = useState<Gurdwara | null>(
+    null,
+  );
+
+  // 🔒 SCROLL LOCK FIX
+  useEffect(() => {
+    if (selectedGurdwara) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedGurdwara]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.05
-      }
-    }
+      transition: { staggerChildren: 0.06 },
+    },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
   };
 
   return (
-    <section id="gurdwaras" className="py-16 md:py-24 bg-gradient-to-b from-background to-accent/10" data-testid="section-gurdwaras">
+    <section id="gurdwaras" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4" data-testid="text-gurdwaras-title">
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1A44]">
             ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
           </h2>
-          <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-primary via-orange-500 to-primary mx-auto mb-6 glow-border-orange"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-gurdwaras-subtitle">
+          <div className="w-24 h-1 mt-4 mx-auto bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full" />
+          <p className="text-lg md:text-xl text-[#243763] mt-4">
             ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਨਾਲ ਜੁੜੇ ਇਤਿਹਾਸਕ ਗੁਰਧਾਮ
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        {/* Cards Grid */}
+        <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+          animate="show"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {gurdwaras.map((gurdwara, index) => (
-            <motion.div
-              key={gurdwara.id}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card 
-                className="shadow-3d-hover glow-border transition-all cursor-pointer h-full group relative"
+          {gurdwaras.map((gurdwara) => (
+            <motion.div key={gurdwara.id} variants={itemVariants}>
+              <Card
+                className="cursor-pointer shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden bg-white"
                 onClick={() => setSelectedGurdwara(gurdwara)}
-                data-testid={`card-gurdwara-${gurdwara.id}`}
               >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
-                />
-                
+                {/* Image */}
                 {gurdwara.imageUrl && (
-                  <div className="aspect-video overflow-hidden bg-muted relative rounded-t-lg">
-                    <motion.img
+                  <div className="aspect-video overflow-hidden bg-gray-200">
+                    <img
                       src={gurdwara.imageUrl}
                       alt={gurdwara.name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
-                      initial={{ opacity: 0.4 }}
-                      whileHover={{ opacity: 0.7 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    {gurdwara.visitDate && (
-                      <motion.div 
-                        className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg"
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        transition={{ delay: index * 0.1 + 0.3, duration: 0.5, type: "spring" }}
-                      >
-                        {gurdwara.visitDate}
-                      </motion.div>
-                    )}
                   </div>
                 )}
-                
+
                 <CardHeader>
-                  <CardTitle className="text-xl md:text-2xl font-semibold text-card-foreground group-hover:text-primary transition-colors">
+                  <CardTitle className="text-xl font-bold text-[#0A1A44]">
                     {gurdwara.name}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <p className="text-sm md:text-base text-foreground/80 line-clamp-3">
+                  <p className="text-[#1b2553] text-sm line-clamp-3">
                     {gurdwara.briefHistory}
                   </p>
 
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4 flex-shrink-0" />
-                    <span className="line-clamp-1">{gurdwara.location.address}</span>
-                  </div>
+                  <p className="flex items-center gap-2 text-gray-600 text-sm">
+                    <MapPin className="w-4 h-4" />
+                    {gurdwara.location.address}
+                  </p>
 
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
+                  <Button
+                    className="w-full flex items-center justify-center gap-2"
+                    variant="outline"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedGurdwara(gurdwara);
+                    }}
                   >
-                    <Button
-                      variant="outline"
-                      className="w-full group/btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedGurdwara(gurdwara);
-                      }}
-                      data-testid={`button-view-${gurdwara.id}`}
-                    >
-                      <span>ਪੂਰੀ ਜਾਣਕਾਰੀ ਦੇਖੋ</span>
-                      <ChevronRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </motion.div>
+                    ਪੂਰੀ ਜਾਣਕਾਰੀ ਦੇਖੋ
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* MODAL */}
         <AnimatePresence>
           {selectedGurdwara && (
-            <motion.div 
-              className="fixed inset-0 bg-background/95 backdrop-blur-sm z-50 overflow-y-auto"
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex justify-center items-start py-10 overflow-y-auto"
               onClick={() => setSelectedGurdwara(null)}
-              data-testid="modal-gurdwara-details"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
             >
-              <div className="min-h-screen py-8 px-4">
-                <motion.div 
-                  className="max-w-4xl mx-auto bg-card border border-card-border rounded-lg shadow-2xl"
-                  onClick={(e) => e.stopPropagation()}
-                  initial={{ scale: 0.9, y: 50 }}
-                  animate={{ scale: 1, y: 0 }}
-                  exit={{ scale: 0.9, y: 50 }}
-                  transition={{ duration: 0.3, type: "spring" }}
-                >
-                  <div className="sticky top-0 z-10 bg-card border-b border-card-border px-6 py-4 flex items-center justify-between rounded-t-lg">
-                    <h3 className="text-2xl md:text-3xl font-bold text-card-foreground">
-                      {selectedGurdwara.name}
-                    </h3>
-                    <motion.div whileHover={{ rotate: 90 }} transition={{ duration: 0.2 }}>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => setSelectedGurdwara(null)}
-                        data-testid="button-close-modal"
-                      >
-                        <X className="w-6 h-6" />
-                      </Button>
-                    </motion.div>
+              <motion.div
+                className="bg-[#0A1A44] text-white rounded-2xl shadow-2xl max-w-4xl w-full border border-[#1d2b6b] max-h-[90vh] overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0, scale: 0.6, rotateX: 30 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotateX: 0,
+                  transition: {
+                    duration: 0.45,
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 10,
+                  },
+                }}
+                exit={{ opacity: 0, scale: 0.6, rotateX: -20 }}
+              >
+                {/* MODAL HEADER */}
+                <div className="flex items-center justify-between px-6 py-4 border-b border-[#1d2b6b] bg-[#0A1A44]">
+                  <h3 className="text-2xl font-bold text-[#F5F7FF]">
+                    {selectedGurdwara.name}
+                  </h3>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setSelectedGurdwara(null)}
+                  >
+                    <X className="w-6 h-6 text-white" />
+                  </Button>
+                </div>
+
+                {/* MODAL CONTENT */}
+                <div className="p-6 space-y-8 text-[#E2E8F0]">
+                  {/* IMAGE */}
+                  {selectedGurdwara.imageUrl && (
+                    <div className="aspect-video rounded-lg overflow-hidden border border-[#1d2b6b]">
+                      <img
+                        src={selectedGurdwara.imageUrl}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+
+                  {/* FULL HISTORY */}
+                  <div>
+                    <h4 className="text-xl font-semibold text-yellow-400 mb-3">
+                      ਇਤਿਹਾਸ:
+                    </h4>
+                    <p className="leading-relaxed whitespace-pre-line">
+                      {selectedGurdwara.fullHistory}
+                    </p>
                   </div>
 
-                  <div className="p-6 md:p-8 space-y-8">
-                    {selectedGurdwara.imageUrl && (
-                      <motion.div 
-                        className="aspect-video overflow-hidden rounded-lg border border-border shadow-lg"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <img
-                          src={selectedGurdwara.imageUrl}
-                          alt={selectedGurdwara.name}
-                          className="w-full h-full object-cover"
+                  {/* VISIT DATE */}
+                  {selectedGurdwara.visitDate && (
+                    <div>
+                      <h4 className="text-xl font-semibold text-yellow-400 mb-3">
+                        ਯਾਤਰਾ ਸਮਾਂ:
+                      </h4>
+                      <div className="flex items-center gap-3 bg-blue-200/20 p-4 rounded-lg border border-blue-300/30">
+                        <Calendar className="w-5 h-5 text-yellow-300" />
+                        <span className="font-medium text-yellow-200 text-lg">
+                          {selectedGurdwara.visitDate}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* LOCATION */}
+                  <div>
+                    <h4 className="text-xl font-semibold text-yellow-400 mb-3">
+                      ਸਥਿਤੀ:
+                    </h4>
+
+                    <div className="flex items-center gap-2 text-[#E2E8F0] mb-4">
+                      <MapPin className="w-5 h-5 text-red-400" />
+                      {selectedGurdwara.location.address}
+                    </div>
+
+                    {selectedGurdwara.location.mapEmbedUrl && (
+                      <div className="aspect-video rounded-lg overflow-hidden border border-[#1d2b6b]">
+                        <iframe
+                          src={selectedGurdwara.location.mapEmbedUrl}
+                          width="100%"
+                          height="100%"
+                          allowFullScreen
+                          loading="lazy"
                         />
-                      </motion.div>
-                    )}
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <h4 className="text-xl font-semibold text-foreground mb-4">ਇਤਿਹਾਸ:</h4>
-                      <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed whitespace-pre-line">
-                        {selectedGurdwara.fullHistory}
                       </div>
-                    </motion.div>
-
-                    {selectedGurdwara.visitDate && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        <h4 className="text-xl font-semibold text-foreground mb-4">ਯਾਤਰਾ ਸਮਾਂ:</h4>
-                        <div className="flex items-start gap-3 bg-primary/10 p-4 rounded-lg">
-                          <Calendar className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                          <p className="text-lg font-medium text-primary">{selectedGurdwara.visitDate}</p>
-                        </div>
-                      </motion.div>
-                    )}
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                    >
-                      <h4 className="text-xl font-semibold text-foreground mb-4">ਸਥਿਤੀ:</h4>
-                      <div className="flex items-start gap-3 mb-4 bg-accent/20 p-4 rounded-lg">
-                        <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                        <p className="text-base text-foreground/80">{selectedGurdwara.location.address}</p>
-                      </div>
-                      
-                      {selectedGurdwara.location.mapEmbedUrl && (
-                        <div className="aspect-video rounded-lg overflow-hidden border border-border shadow-lg">
-                          <iframe
-                            src={selectedGurdwara.location.mapEmbedUrl}
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title={`Map of ${selectedGurdwara.name}`}
-                          />
-                        </div>
-                      )}
-                    </motion.div>
-
-                    {selectedGurdwara.pdfAssets && selectedGurdwara.pdfAssets.length > 0 && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        <PdfList pdfAssets={selectedGurdwara.pdfAssets} />
-                      </motion.div>
                     )}
                   </div>
-                </motion.div>
-              </div>
+
+                  {/* SHARE BUTTONS */}
+                  <div className="mt-6">
+                    <h4 className="text-xl font-semibold text-yellow-400 mb-2">
+                      ਸ਼ੇਅਰ ਕਰੋ:
+                    </h4>
+
+                    <div className="flex gap-4">
+                      {/* WhatsApp */}
+                      <Button
+                        className="bg-green-600 hover:bg-green-700 text-white"
+                        onClick={() => {
+                          const msg = `ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ: ${selectedGurdwara.name}\nਸਥਿਤੀ: ${selectedGurdwara.location.address}`;
+                          const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+                          window.open(url, "_blank");
+                        }}
+                      >
+                        WhatsApp
+                      </Button>
+
+                      {/* Link Copy */}
+                      <Button
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                        onClick={() => {
+                          const link =
+                            window.location.href +
+                            `#gurdwara-${selectedGurdwara.id}`;
+                          navigator.clipboard.writeText(link);
+                          alert("ਲਿੰਕ ਕਾਪੀ ਹੋ ਗਿਆ ਹੈ!");
+                        }}
+                      >
+                        Copy Link
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* PDFs */}
+                  {selectedGurdwara.pdfAssets?.length > 0 && (
+                    <PdfList pdfAssets={selectedGurdwara.pdfAssets} />
+                  )}
+                </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
