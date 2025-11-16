@@ -60,14 +60,14 @@ export function Hero() {
           </motion.div>
 
           <motion.div 
-            className="mt-12 p-8 md:p-12 bg-card/50 backdrop-blur-sm border border-card-border rounded-lg shadow-lg max-w-2xl mx-auto relative overflow-hidden"
+            className="mt-12 p-8 md:p-12 bg-card/50 backdrop-blur-sm border border-card-border rounded-lg shadow-3d glow-border max-w-2xl mx-auto relative overflow-hidden"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}
           >
             <motion.div
-              className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-orange-500 to-primary"
+              className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-orange-500 to-primary glow-border-orange"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, delay: 1 }}
@@ -88,7 +88,7 @@ export function Hero() {
           >
             <motion.button
               onClick={() => document.getElementById("biography")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-md shadow-lg transition-all relative overflow-hidden group"
+              className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-md shadow-3d-hover glow-border transition-all relative overflow-hidden group"
               data-testid="button-explore-biography"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
@@ -103,7 +103,7 @@ export function Hero() {
             </motion.button>
             <motion.button
               onClick={() => document.getElementById("shabads")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-4 bg-card border-2 border-card-border text-card-foreground font-semibold rounded-md shadow-lg backdrop-blur-sm transition-all hover:border-primary"
+              className="px-8 py-4 bg-card border-2 border-card-border text-card-foreground font-semibold rounded-md shadow-3d-hover glow-border backdrop-blur-sm transition-all hover:border-primary"
               data-testid="button-explore-shabads"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}

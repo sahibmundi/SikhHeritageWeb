@@ -52,11 +52,7 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg" 
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-sidebar border-b border-sidebar-border shadow-3d glow-border"
       data-testid="header"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +65,7 @@ export function Header() {
             whileTap={{ scale: 0.98 }}
           >
             <motion.div 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-primary shadow-lg"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-sidebar-foreground shadow-lg glow-border"
               whileHover={{ rotate: 360, borderColor: "#f97316" }}
               transition={{ duration: 0.6 }}
             >
@@ -79,7 +75,7 @@ export function Header() {
                 className="w-full h-full object-cover"
               />
             </motion.div>
-            <span className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+            <span className="text-lg sm:text-xl md:text-2xl font-semibold text-sidebar-foreground group-hover:text-sidebar-accent-foreground transition-colors">
               ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ
             </span>
           </motion.button>
@@ -89,14 +85,14 @@ export function Header() {
               <>
                 <motion.button
                   onClick={() => scrollToSection("biography")}
-                  className="text-base font-medium text-foreground hover:text-primary transition-all px-4 py-2 rounded-lg relative overflow-hidden group"
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
                   data-testid="link-biography"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">ਜੀਵਨੀ</span>
                   <motion.div 
-                    className="absolute inset-0 bg-primary/10 rounded-lg"
+                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
                     initial={{ scale: 0, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -104,14 +100,14 @@ export function Header() {
                 </motion.button>
                 <motion.button
                   onClick={() => scrollToSection("shabads")}
-                  className="text-base font-medium text-foreground hover:text-primary transition-all px-4 py-2 rounded-lg relative overflow-hidden group"
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
                   data-testid="link-shabads"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">ਬਾਣੀ</span>
                   <motion.div 
-                    className="absolute inset-0 bg-primary/10 rounded-lg"
+                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
                     initial={{ scale: 0, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -119,14 +115,14 @@ export function Header() {
                 </motion.button>
                 <motion.button
                   onClick={() => scrollToSection("gurdwaras")}
-                  className="text-base font-medium text-foreground hover:text-primary transition-all px-4 py-2 rounded-lg relative overflow-hidden group"
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
                   data-testid="link-gurdwaras"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ</span>
                   <motion.div 
-                    className="absolute inset-0 bg-primary/10 rounded-lg"
+                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
                     initial={{ scale: 0, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -134,14 +130,29 @@ export function Header() {
                 </motion.button>
                 <motion.button
                   onClick={() => scrollToSection("resources")}
-                  className="text-base font-medium text-foreground hover:text-primary transition-all px-4 py-2 rounded-lg relative overflow-hidden group"
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
                   data-testid="link-resources"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">ਸਰੋਤ</span>
                   <motion.div 
-                    className="absolute inset-0 bg-primary/10 rounded-lg"
+                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+                <motion.button
+                  onClick={() => scrollToSection("raags")}
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
+                  data-testid="link-raags"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="relative z-10">ਰਾਗ</span>
+                  <motion.div 
+                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
                     initial={{ scale: 0, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -151,7 +162,7 @@ export function Header() {
             ) : (
               <Link href="/">
                 <motion.button 
-                  className="text-base font-medium text-foreground hover:text-primary transition-all px-4 py-2 rounded-lg" 
+                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg shadow-3d-hover" 
                   data-testid="link-home-nav"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -160,22 +171,12 @@ export function Header() {
                 </motion.button>
               </Link>
             )}
-            <Link href="/raags">
-              <motion.button 
-                className="text-base font-medium text-foreground hover:text-primary transition-all px-4 py-2 rounded-lg" 
-                data-testid="link-raags"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ਰਾਗ
-              </motion.button>
-            </Link>
             <motion.div whileHover={{ rotate: 180 }} transition={{ duration: 0.4 }}>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
-                className="ml-2"
+                className="ml-2 text-sidebar-foreground hover:text-sidebar-accent-foreground"
                 data-testid="button-theme-toggle"
               >
                 {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -188,6 +189,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
+              className="text-sidebar-foreground"
               data-testid="button-theme-toggle-mobile"
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -196,6 +198,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-sidebar-foreground"
               data-testid="button-menu-toggle"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -217,7 +220,7 @@ export function Header() {
                 <>
                   <motion.button
                     onClick={() => scrollToSection("biography")}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
                     data-testid="link-biography-mobile"
                     whileHover={{ x: 8 }}
                   >
@@ -225,7 +228,7 @@ export function Header() {
                   </motion.button>
                   <motion.button
                     onClick={() => scrollToSection("shabads")}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
                     data-testid="link-shabads-mobile"
                     whileHover={{ x: 8 }}
                   >
@@ -233,7 +236,7 @@ export function Header() {
                   </motion.button>
                   <motion.button
                     onClick={() => scrollToSection("gurdwaras")}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
                     data-testid="link-gurdwaras-mobile"
                     whileHover={{ x: 8 }}
                   >
@@ -241,17 +244,25 @@ export function Header() {
                   </motion.button>
                   <motion.button
                     onClick={() => scrollToSection("resources")}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
                     data-testid="link-resources-mobile"
                     whileHover={{ x: 8 }}
                   >
                     ਸਰੋਤ
                   </motion.button>
+                  <motion.button
+                    onClick={() => scrollToSection("raags")}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
+                    data-testid="link-raags-mobile"
+                    whileHover={{ x: 8 }}
+                  >
+                    ਰਾਗ
+                  </motion.button>
                 </>
               ) : (
                 <Link href="/">
                   <motion.button 
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors" 
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover" 
                     data-testid="link-home-mobile"
                     whileHover={{ x: 8 }}
                   >
@@ -259,15 +270,6 @@ export function Header() {
                   </motion.button>
                 </Link>
               )}
-              <Link href="/raags">
-                <motion.button 
-                  className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-md transition-colors" 
-                  data-testid="link-raags-mobile"
-                  whileHover={{ x: 8 }}
-                >
-                  ਰਾਗ
-                </motion.button>
-              </Link>
             </motion.nav>
           )}
         </AnimatePresence>

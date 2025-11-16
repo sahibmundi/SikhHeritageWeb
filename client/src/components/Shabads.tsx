@@ -31,9 +31,9 @@ export function Shabads({ shabads }: ShabadsProps) {
   };
 
   return (
-    <section id="shabads" className="py-16 md:py-24 bg-accent/20" data-testid="section-shabads">
+    <section id="shabads" className="py-16 md:py-24 bg-accent/20 animate-fade-in-up" data-testid="section-shabads">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 animate-scale-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4" data-testid="text-shabads-title">
             ਬਾਣੀ ਅਤੇ ਰਾਗ
           </h2>
@@ -44,19 +44,19 @@ export function Shabads({ shabads }: ShabadsProps) {
 
         <div className="grid grid-cols-1 gap-6 md:gap-8">
           {shabads.map((shabad) => (
-            <Card key={shabad.id} className="overflow-hidden shadow-lg" data-testid={`card-shabad-${shabad.id}`}>
+            <Card key={shabad.id} className="overflow-hidden shadow-3d-hover glow-border animate-fade-in-up" data-testid={`card-shabad-${shabad.id}`}>
               <CardHeader className="bg-card border-b border-card-border">
                 <CardTitle className="text-2xl md:text-3xl font-semibold text-card-foreground">
                   {shabad.title}
                 </CardTitle>
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <div className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-md">
+                  <div className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-md shadow-3d glow-border">
                     <span className="text-sm font-medium text-primary">ਰਾਗ: {shabad.raag.name}</span>
                   </div>
-                  <div className="px-4 py-2 bg-accent border border-accent-border rounded-md">
+                  <div className="px-4 py-2 bg-accent border border-accent-border rounded-md shadow-3d glow-border-orange">
                     <span className="text-sm text-accent-foreground">ਸਮਾਂ: {shabad.raag.time}</span>
                   </div>
-                  <div className="px-4 py-2 bg-accent border border-accent-border rounded-md">
+                  <div className="px-4 py-2 bg-accent border border-accent-border rounded-md shadow-3d glow-border-orange">
                     <span className="text-sm text-accent-foreground">ਮੂਡ: {shabad.raag.mood}</span>
                   </div>
                 </div>

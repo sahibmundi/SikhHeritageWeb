@@ -17,9 +17,9 @@ export function Resources({ resources }: ResourcesProps) {
   }, {} as Record<string, Resource[]>);
 
   return (
-    <section id="resources" className="py-16 md:py-24 bg-accent/20" data-testid="section-resources">
+    <section id="resources" className="py-16 md:py-24 bg-accent/20 animate-fade-in-up" data-testid="section-resources">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 animate-scale-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4" data-testid="text-resources-title">
             ਸਰੋਤ ਡਾਊਨਲੋਡ
           </h2>
@@ -29,29 +29,29 @@ export function Resources({ resources }: ResourcesProps) {
         </div>
 
         <div className="space-y-12">
-          {Object.entries(groupedResources).map(([category, items]) => (
-            <div key={category}>
-              <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+          {Object.entries(groupedResources).map(([category, items], categoryIndex) => (
+            <div key={category} className="animate-fade-in-up" style={{ animationDelay: `${categoryIndex * 0.1}s` }}>
+              <h3 className="text-2xl md:text-3xl font-semibold text-orange-500 mb-6">
                 {category}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {items.map((resource) => (
-                  <Card key={resource.id} className="shadow-lg" data-testid={`card-resource-${resource.id}`}>
-                    <CardHeader>
+                  <Card key={resource.id} className="shadow-3d-hover glow-border" data-testid={`card-resource-${resource.id}`}>
+                    <CardHeader className="bg-card/80 border-b border-card-border">
                       <CardTitle className="text-xl md:text-2xl font-semibold text-card-foreground">
                         {resource.title}
                       </CardTitle>
                     </CardHeader>
 
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-4 pt-6">
                       <p className="text-sm md:text-base text-foreground/80">
                         {resource.description}
                       </p>
 
                       <Button
                         variant="default"
-                        className="w-full gap-2"
+                        className="w-full gap-2 shadow-3d-hover glow-border"
                         onClick={() => window.open(resource.pdfUrl, '_blank')}
                         data-testid={`button-download-${resource.id}`}
                       >

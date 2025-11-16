@@ -50,7 +50,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
             ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
           </h2>
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-primary via-orange-500 to-primary mx-auto mb-6"
+            className="w-24 h-1 bg-gradient-to-r from-primary via-orange-500 to-primary mx-auto mb-6 glow-border-orange"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -76,7 +76,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
               transition={{ duration: 0.3 }}
             >
               <Card 
-                className="overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer h-full group relative"
+                className="overflow-hidden shadow-3d-hover glow-border transition-all cursor-pointer h-full group relative"
                 onClick={() => setSelectedGurdwara(gurdwara)}
                 data-testid={`card-gurdwara-${gurdwara.id}`}
               >

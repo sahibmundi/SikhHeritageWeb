@@ -5,6 +5,7 @@ import { Biography } from "@/components/Biography";
 import { Shabads } from "@/components/Shabads";
 import { Gurdwaras } from "@/components/Gurdwaras";
 import { Resources } from "@/components/Resources";
+import { RaagsSection } from "@/components/RaagsSection";
 import { Footer } from "@/components/Footer";
 import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource } from "@shared/schema";
 
@@ -49,6 +50,7 @@ export default function Home() {
       <Shabads shabads={shabads} />
       <Gurdwaras gurdwaras={gurdwaras} />
       <Resources resources={resources} />
+      <RaagsSection />
       <Footer />
     </div>
   );
