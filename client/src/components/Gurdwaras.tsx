@@ -253,7 +253,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                   </div>
 
                   {/* PDFs */}
-                  {selectedGurdwara.pdfAssets?.length > 0 && (
+                  {selectedGurdwara.pdfAssets && selectedGurdwara.pdfAssets.length > 0 && (
                     <PdfList pdfAssets={selectedGurdwara.pdfAssets} />
                   )}
                 </div>
