@@ -51,7 +51,7 @@
 ### Hero Section
 - **Full-width hero** with respectful background image of Guru Tegh Bahadur Ji or spiritual imagery (Golden Temple, spiritual patterns)
 - Semi-transparent overlay for text readability
-- Centered Gurmukhi title: "ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ — ਧਰਮ ਤੇ ਮਨੁੱਖੀ ਅਧਿਕਾਰਾਂ ਦੇ ਰਖਿਆਕਰਤਾ"
+- Centered Gurmukhi title: "ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ — ਧਰਮ ਤੇ ਮਨੁੱਖੀ ਅਧਿਕਾਰਾਂ ਦੇ ਰਖਿਆਕਰਤਾ"
 - Subtle fade-in entrance
 - Buttons with blurred backgrounds (backdrop-blur-sm, bg-white/20)
 

@@ -49,7 +49,7 @@ export function Biography({ timeline, sections }: BiographyProps) {
             ਜੀਵਨੀ
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-biography-subtitle">
-            ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਦਾ ਸੰਪੂਰਨ ਜੀਵਨ ਚਰਿੱਤਰ
+            ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦਾ ਸੰਪੂਰਨ ਜੀਵਨ ਚਰਿੱਤਰ
           </p>
         </div>
 

@@ -33,7 +33,7 @@ export default function Raags() {
               ਰਾਗ
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-description">
-              ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਦੀ ਬਾਣੀ 15 ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹੈ। ਹਰੇਕ ਰਾਗ ਦਾ ਆਪਣਾ ਵਿਸ਼ੇਸ਼ ਸਮਾਂ, ਮੂਡ ਅਤੇ ਆਧਿਆਤਮਿਕ ਮਹੱਤਵ ਹੈ।
+              ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀ ਬਾਣੀ 15 ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹੈ। ਹਰੇਕ ਰਾਗ ਦਾ ਆਪਣਾ ਵਿਸ਼ੇਸ਼ ਸਮਾਂ, ਮੂਡ ਅਤੇ ਆਧਿਆਤਮਿਕ ਮਹੱਤਵ ਹੈ।
             </p>
           </div>
 

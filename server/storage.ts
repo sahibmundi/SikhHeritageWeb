@@ -122,7 +122,7 @@ export class MemStorage implements IStorage {
     {
       id: "janm",
       heading: "ਜਨਮ ਅਤੇ ਮੁੱਢਲਾ ਜੀਵਨ (1621)",
-      content: `ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਦਾ ਜਨਮ 1 ਅਪ੍ਰੈਲ 1621 ਦਿਨ ਐਤਵਾਰ ਨੂੰ ਮਾਤਾ ਨਾਨਕੀ ਜੀ ਦੀ ਕੁੱਖੋਂ ਅੰਮ੍ਰਿਤਸਰ ਵਿਖੇ ਗੁਰਦਵਾਰਾ ਗੁਰੂ ਕੇ ਮਹਿਲ ਦੇ ਸਥਾਨ ਤੇ ਹੋਇਆ। ਆਪ ਜੀ ਛੇਵੇਂ ਗੁਰੂ ਹਰਗੋਬਿੰਦ ਸਾਹਿਬ ਜੀ ਦੇ ਪੰਜਵੇਂ ਅਤੇ ਸੱਭ ਤੋਂ ਛੋਟੇ ਪੁੱਤਰ ਸਨ। ਬਚਪਨ ਵਿੱਚ ਉਨ੍ਹਾਂ ਦਾ ਨਾਮ ਤਿਆਗ ਮੱਲ ਸੀ।
+      content: `ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦਾ ਜਨਮ 1 ਅਪ੍ਰੈਲ 1621 ਦਿਨ ਐਤਵਾਰ ਨੂੰ ਮਾਤਾ ਨਾਨਕੀ ਜੀ ਦੀ ਕੁੱਖੋਂ ਅੰਮ੍ਰਿਤਸਰ ਵਿਖੇ ਗੁਰਦਵਾਰਾ ਗੁਰੂ ਕੇ ਮਹਿਲ ਦੇ ਸਥਾਨ ਤੇ ਹੋਇਆ। ਆਪ ਜੀ ਛੇਵੇਂ ਗੁਰੂ ਹਰਗੋਬਿੰਦ ਸਾਹਿਬ ਜੀ ਦੇ ਪੰਜਵੇਂ ਅਤੇ ਸੱਭ ਤੋਂ ਛੋਟੇ ਪੁੱਤਰ ਸਨ। ਬਚਪਨ ਵਿੱਚ ਉਨ੍ਹਾਂ ਦਾ ਨਾਮ ਤਿਆਗ ਮੱਲ ਸੀ।
 
 ਆਪ ਜੀ ਨੇ 9 ਸਾਲ ਦੇ ਕਰੀਬ ਸਮਾਂ ਅੰਮ੍ਰਿਤਸਰ ਵਿਖੇ ਗੁਜ਼ਾਰਿਆ ਅਤੇ ਫਿਰ ਕਰਤਾਰਪੁਰ ਜਿਲ੍ਹਾ ਜਲੰਧਰ ਵਿਖੇ ਚਲੇ ਗਏ। ਗੁਰੂ ਜੀ ਦੇ ਭੈਣ ਭਰਾਵਾਂ ਦੇ ਨਾਮ ਬਾਬਾ ਗੁਰਦਿੱਤਾ ਜੀ, ਬਾਬਾ ਸੂਰਜ ਮੱਲ, ਬਾਬਾ ਅਟੱਲ ਰਾਏ ਅਤੇ ਬੀਬੀ ਵੀਰੋ ਹਨ।
 
@@ -185,7 +185,7 @@ export class MemStorage implements IStorage {
         significance: "ਇਹ ਸਲੋਕ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹੈ ਅਤੇ ਜੀਵਨ ਦੀ ਅਸਥਾਈਤਾ ਅਤੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਦੇ ਮਹੱਤਵ ਬਾਰੇ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
       },
       raagId: "gauri",
-      audioUrl: "https://www.searchgurbani.com/shabad_audio/02/5830/51890/2.mp3",
+      audioUrl: "/attached_assets/SALOK MAHALA 9 ਸਲੋਕ ਮਹਲਾ ੯ KIRTAN ROOP VICH BHAI BHUPINDER SINGH HAZOORI RAGI AMARBIR SINGH_1763366868711.mp3",
       pageNumber: 1428
     },
     {
@@ -271,8 +271,246 @@ export class MemStorage implements IStorage {
         significance: "ਰਾਗ ਧਨਾਸਰੀ ਪਰਮਾਤਮਾ ਦੀ ਸਿਫਤਿ ਸਾਲਾਹ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।"
       },
       raagId: "dhanasri",
-      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/3354/32360/1.mp3",
+      audioUrl: "/attached_assets/Man Kaha Bisario Raam Naam - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868715.mp3",
       pageNumber: 685
+    },
+    {
+      id: "shabad-7",
+      title: "ਮਨ ਕੀ ਮਨ ਹੀ ਮਾਹਿ ਰਹੀ",
+      gurmukhi: `ਮਨ ਕੀ ਮਨ ਹੀ ਮਾਹਿ ਰਹੀ।
+ਕਹਿ ਨਾਨਕ ਬਿਨੁ ਹਰਿ ਭਜਨ ਜਨਮੁ ਜੂਐ ਹਾਰਿਓ।`,
+      meaning: "The desires of the mind remain within the mind. Says Nanak, without meditation on the Lord, life is lost in the gamble.",
+      teeka: "ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਮਨ ਦੀਆਂ ਕਾਮਨਾਵਾਂ ਮਨ ਵਿੱਚ ਹੀ ਰਹਿੰਦੀਆਂ ਹਨ। ਪਰਮਾਤਮਾ ਦੇ ਭਜਨ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਜੂਏ ਵਾਂਗ ਹਾਰ ਜਾਂਦਾ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਗੰਭੀਰ ਚਿੰਤਨ ਲਈ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Man Ki Man Hi Mahe Rahi_1763366868721.mp3",
+      pageNumber: 221
+    },
+    {
+      id: "shabad-8",
+      title: "ਮਨ ਰੇ ਪ੍ਰਭ ਕੀ ਸਰਨਿ ਬਿਚਾਰੋ",
+      gurmukhi: `ਮਨ ਰੇ ਪ੍ਰਭ ਕੀ ਸਰਨਿ ਬਿਚਾਰੋ।
+ਏਕ ਸਿਮਰਤ ਸਗਲ ਦੁਖ ਜਾਹੀ ਨਾਨਕ ਬੇੜਾ ਪਾਰੋ।`,
+      meaning: "O mind, contemplate seeking God's Sanctuary. By meditating on the One, all pains depart; Nanak, the boat crosses over.",
+      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਸੰਬੋਧਨ ਕਰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦੀ ਸ਼ਰਣ ਵਿੱਚ ਆਉਣ ਬਾਰੇ ਵਿਚਾਰ ਕਰੋ। ਇੱਕ ਪਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਕਰਨ ਨਾਲ ਸਾਰੇ ਦੁੱਖ ਦੂਰ ਹੋ ਜਾਂਦੇ ਹਨ ਅਤੇ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਲੰਘ ਜਾਈਦਾ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਪਰਮਾਤਮਾ ਦੀ ਯਾਦ ਲਈ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Man Re Prabh Ki Saran Bicharo_1763366868719.mp3",
+      pageNumber: 219
+    },
+    {
+      id: "shabad-9",
+      title: "ਮਨ ਰੇ ਕਵਨ ਕੁਮਤਿ ਤੈਂ ਲੀਨੀ",
+      gurmukhi: `ਮਨ ਰੇ ਕਵਨ ਕੁਮਤਿ ਤੈਂ ਲੀਨੀ।
+ਰਾਮ ਨਾਮ ਛਾਡਿ ਅਨ ਰਸ ਭੀਨੀ।`,
+      meaning: "O mind, what evil counsel have you taken? You have abandoned the Lord's Name and are drenched in other pleasures.",
+      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਪੁੱਛਦੇ ਹਨ ਕਿ ਤੂੰ ਕਿਹੜੀ ਖੋਟੀ ਮੱਤ ਫੜੀ ਹੈ? ਤੂੰ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਛੱਡ ਕੇ ਹੋਰ ਰਸਾਂ ਵਿੱਚ ਭਿੱਜ ਗਿਆ ਹੈਂ। ਇਹ ਮਨ ਨੂੰ ਸੁਚੇਤ ਕਰਨ ਵਾਲੀ ਬਾਣੀ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਨੂੰ ਉਲਾਂਭੇ ਦੇਣ ਲਈ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Man Re Kaun Kumat Tain Lini - Bhai Kamaljeet Singh Ji and Jatha (Mar 29 2011)_1763366868720.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-10",
+      title: "ਮਨ ਰੇ ਰਾਮ ਸਿਉ ਕਰਿ ਪ੍ਰੀਤਿ",
+      gurmukhi: `ਮਨ ਰੇ ਰਾਮ ਸਿਉ ਕਰਿ ਪ੍ਰੀਤਿ।
+ਜਾ ਕੈ ਜੀਵਤ ਸਭ ਕੋ ਜੀਵੈ ਮਰੈ ਸੁ ਕਾਲੁ ਬੀਤਿ।`,
+      meaning: "O mind, enshrine love for the Lord. By whose life all live, and whose death ends the cycle of time.",
+      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਨਾਲ ਪ੍ਰੀਤ ਕਰ। ਜਿਸ ਦੇ ਜੀਵਨ ਨਾਲ ਸਾਰੇ ਜੀਉਂਦੇ ਹਨ ਅਤੇ ਜਿਸ ਦੇ ਮਰਨ ਨਾਲ ਕਾਲ ਦਾ ਚੱਕਰ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਪ੍ਰੀਤ ਦੇ ਭਾਵ ਲਈ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Re Man Ram Sio Kar Preet_1763366868722.mp3",
+      pageNumber: 219
+    },
+    {
+      id: "shabad-11",
+      title: "ਮਾਈ ਮੈਂ ਧਨੁ ਪਾਇਓ ਹਰਿ ਨਾਮੁ",
+      gurmukhi: `ਮਾਈ ਮੈਂ ਧਨੁ ਪਾਇਓ ਹਰਿ ਨਾਮੁ।
+ਸਤਿਗੁਰ ਕਿਰਪਾ ਤੇ ਹਰਿ ਨਾਮੁ ਪਾਇਓ ਬਿਨਸਿਓ ਸਭੁ ਅਭਿਮਾਨੁ।`,
+      meaning: "O mother, I have obtained the wealth of the Lord's Name. By the Guru's Grace, I have obtained the Lord's Name, and all ego has been dispelled.",
+      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੈਨੂੰ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਦਾ ਧਨ ਮਿਲ ਗਿਆ ਹੈ। ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਹਰਿ ਨਾਮ ਪ੍ਰਾਪਤ ਹੋਇਆ ਅਤੇ ਸਾਰਾ ਹੰਕਾਰ ਨਾਸ਼ ਹੋ ਗਿਆ।",
+      raag: {
+        name: "ਬਿਲਾਵਲ",
+        time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
+        significance: "ਰਾਗ ਬਿਲਾਵਲ ਆਨੰਦ ਅਤੇ ਪ੍ਰਾਪਤੀ ਦਾ ਭਾਵ ਦਿੰਦਾ ਹੈ।"
+      },
+      raagId: "bilawal",
+      audioUrl: "/attached_assets/Maai Mai Dhan Paayo Har Naam_1763366868715.mp3",
+      pageNumber: 819
+    },
+    {
+      id: "shabad-12",
+      title: "ਮਾਈ ਮਨ ਮੇਰੋ ਬਸਿ ਨਾਹੀ",
+      gurmukhi: `ਮਾਈ ਮਨ ਮੇਰੋ ਬਸਿ ਨਾਹੀ।
+ਕਰਮ ਕਰਤ ਫਿਰਿਓ ਅਨੇਕ ਜਨਮ ਫਿਰਿ ਫਿਰਿ ਪਛੁਤਾਹੀ।`,
+      meaning: "O mother, my mind is not under my control. I have performed many deeds through countless lifetimes, and I regret them again and again.",
+      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੇਰਾ ਮਨ ਮੇਰੇ ਵੱਸ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਅਨੇਕਾਂ ਜਨਮਾਂ ਵਿੱਚ ਕਰਮ ਕਰਦਿਆਂ ਫਿਰਿਆ ਅਤੇ ਵਾਰ ਵਾਰ ਪਛੁਤਾਉਂਦਾ ਰਿਹਾ। ਇਹ ਮਨ ਦੀ ਚੰਚਲਤਾ ਬਾਰੇ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਲਈ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Maai Man Mero Bas Nahi_1763366868718.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-13",
+      title: "ਪਾਪੀ ਹਿਏ ਮੈ ਕਾਮੁ ਬਸੈ",
+      gurmukhi: `ਪਾਪੀ ਹਿਏ ਮੈ ਕਾਮੁ ਬਸੈ।
+ਕ੍ਰੋਧੁ ਅਹੰਕਾਰੁ ਤਿਸੁ ਸੰਗਿ ਹਸੈ।`,
+      meaning: "In the sinful heart, lust dwells. Anger and ego laugh along with it.",
+      teeka: "ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਪਾਪੀ ਮਨੁੱਖ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਕਾਮ ਵੱਸਦਾ ਹੈ। ਕ੍ਰੋਧ ਅਤੇ ਅਹੰਕਾਰ ਉਸ ਦੇ ਨਾਲ ਹੱਸਦੇ ਹਨ। ਇਹ ਪੰਜ ਵਿਕਾਰਾਂ ਬਾਰੇ ਸਿੱਖਿਆ ਦਿੰਦੀ ਬਾਣੀ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਵਿਕਾਰਾਂ ਤੋਂ ਦੂਰ ਰਹਿਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Paapi Hiye Main Kaam Basae_1763366868716.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-14",
+      title: "ਰੇ ਨਰ ਇਹੁ ਸਾਚੀ ਜੀਵ ਧਰ",
+      gurmukhi: `ਰੇ ਨਰ ਇਹੁ ਸਾਚੀ ਜੀਵ ਧਰ।
+ਨਾਮੁ ਨ ਜਪਹਿ ਤੇ ਕਾਹੇ ਆਏ ਕਰਮ ਧਰਮ ਸਭਿ ਬਿਸਰੇ।`,
+      meaning: "O man, this is the true support of life. Those who do not chant the Name - why did they even come? All their deeds and Dharma have been forgotten.",
+      teeka: "ਗੁਰੂ ਜੀ ਮਨੁੱਖ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਨਾਮ ਹੀ ਜੀਵਨ ਦਾ ਸੱਚਾ ਆਧਾਰ ਹੈ। ਜਿਹੜੇ ਨਾਮ ਨਹੀਂ ਜਪਦੇ, ਉਹ ਕਿਉਂ ਆਏ? ਉਨ੍ਹਾਂ ਦੇ ਸਾਰੇ ਕਰਮ ਅਤੇ ਧਰਮ ਬਿਸਰ ਗਏ ਹਨ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਜੀਵਨ ਦਾ ਉਦੇਸ਼ ਸਮਝਾਉਂਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Re Nar Eh Sachi Jee Dhar_1763366868717.mp3",
+      pageNumber: 219
+    },
+    {
+      id: "shabad-15",
+      title: "ਕੋਊ ਮਾਈ ਭੂਲਿਓ ਮਨੁ ਸਮਝਾਵੈ",
+      gurmukhi: `ਕੋਊ ਮਾਈ ਭੂਲਿਓ ਮਨੁ ਸਮਝਾਵੈ।
+ਬਿਨੁ ਹਰਿ ਭਜਨ ਜਨਮੁ ਬ੍ਰਿਥਾ ਜਾਵੈ।`,
+      meaning: "If only someone, O mother, would explain to my wandering mind. Without the Lord's meditation, this life is passing in vain.",
+      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਕਾਸ਼ ਕੋਈ ਮੇਰੇ ਭਟਕੇ ਹੋਏ ਮਨ ਨੂੰ ਸਮਝਾ ਦੇਵੇ। ਪਰਮਾਤਮਾ ਦੇ ਭਜਨ ਬਿਨਾਂ ਜੀਵਨ ਵਿਅਰਥ ਜਾ ਰਿਹਾ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਨੂੰ ਸਮਝਾਉਣ ਲਈ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Kou Mayi Bhuliyo Man Samjhave - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868730.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-16",
+      title: "ਸਾਧੋ ਇਹੁ ਮਨੁ ਗਹਿਓ ਨ ਜਾਇ",
+      gurmukhi: `ਸਾਧੋ ਇਹੁ ਮਨੁ ਗਹਿਓ ਨ ਜਾਇ।
+ਜੈਸੇ ਮਧੁਕਰ ਫੁਲ ਫੁਲਿ ਡੋਲੈ ਠਾਉ ਬਸੈ ਕਿਹ ਜਾਇ।`,
+      meaning: "O holy one, this mind cannot be caught. Like the bumble bee that wanders from flower to flower - where can it settle?",
+      teeka: "ਗੁਰੂ ਜੀ ਸੰਤਾਂ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਫੜਿਆ ਨਹੀਂ ਜਾਂਦਾ। ਜਿਵੇਂ ਭੌਰਾ ਫੁੱਲ-ਫੁੱਲ ਵਿੱਚ ਘੁੰਮਦਾ ਹੈ, ਇਹ ਕਿਥੇ ਜਾ ਕੇ ਟਿਕਦਾ ਹੈ? ਇਹ ਮਨ ਦੀ ਚੰਚਲਤਾ ਦਾ ਵਰਣਨ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੇ ਸੁਭਾਅ ਬਾਰੇ ਸਮਝਾਉਂਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Sadho Eho Man Geheyo Na Jayi - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868731.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-17",
+      title: "ਸਾਧੋ ਰਾਮ ਸਰਨਿ ਬਿਸਰਾਮਾ",
+      gurmukhi: `ਸਾਧੋ ਰਾਮ ਸਰਨਿ ਬਿਸਰਾਮਾ।
+ਅਨ ਤਿਆਗਿ ਭਜੀਐ ਇਕੁ ਰਾਮਾ।`,
+      meaning: "O holy one, the Lord's Sanctuary is the place of rest. Abandon all else and meditate on the One Lord.",
+      teeka: "ਗੁਰੂ ਜੀ ਸੰਤਾਂ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦੀ ਸ਼ਰਣ ਵਿੱਚ ਹੀ ਅਸਲ ਅਰਾਮ ਹੈ। ਬਾਕੀ ਸਭ ਕੁਝ ਛੱਡ ਕੇ ਇੱਕ ਰਾਮ ਦਾ ਭਜਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਸ਼ਰਣਾਗਤੀ ਦਾ ਭਾਵ ਪੈਦਾ ਕਰਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Bhai Randhir Singh Sadho Ram Sharan Bisrama Part 1 of 2_1763366868728.mp3",
+      pageNumber: 219
+    },
+    {
+      id: "shabad-18",
+      title: "ਮਨ ਰੇ ਕਾਹਨ ਭਇਓ ਤੈ ਬਾਵਰਾ",
+      gurmukhi: `ਮਨ ਰੇ ਕਾਹਨ ਭਇਓ ਤੈ ਬਾਵਰਾ।
+ਪਾਇਓ ਮਾਨਸ ਜਨਮ ਗੁੰਮਾਇਓ ਕਰਤ ਬਿਕਾਰ ਬਿਕਾਰਾ।`,
+      meaning: "O mind, why have you become so foolish? You have obtained this precious human life, but you are wasting it doing bad deeds.",
+      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਫਟਕਾਰਦੇ ਹਨ ਕਿ ਤੂੰ ਕਿਉਂ ਬਾਵਲਾ ਹੋ ਗਿਆ ਹੈਂ? ਤੂੰ ਮਨੁੱਖ ਜਨਮ ਪਾਇਆ ਪਰ ਇਸ ਨੂੰ ਵਿਕਾਰ ਕਰਦਿਆਂ ਗੁਆ ਰਿਹਾ ਹੈਂ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਮਨੁੱਖਾ ਜਨਮ ਦੀ ਮਹੱਤਤਾ ਸਮਝਾਉਂਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Shabad for Today (Thursday 19.05.2022) Man Re Kahan Bhaiyo Tai Baura -Bhai Gurdev Singh_1763366868727.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-19",
+      title: "ਨਰ ਅਚੇਤ ਪਾਪ ਤੇ ਡਰਰੀ",
+      gurmukhi: `ਨਰ ਅਚੇਤ ਪਾਪ ਤੇ ਡਰਰੀ।
+ਸੁਖ ਸੰਪਤਿ ਜੋਬਨ ਧਨ ਮਾਇਆ ਸਗਰੀ।`,
+      meaning: "O thoughtless man, fear sin. All comforts, wealth, youth, riches and Maya.",
+      teeka: "ਗੁਰੂ ਜੀ ਬੇਸੁਰਤ ਮਨੁੱਖ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਾਪਾਂ ਤੋਂ ਡਰ। ਸਾਰੇ ਸੁੱਖ, ਸੰਪਤੀਆਂ, ਜੁਆਨੀ, ਧਨ ਅਤੇ ਮਾਇਆ ਨਾਸ਼ਵਾਨ ਹਨ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਪਾਪਾਂ ਤੋਂ ਬਚਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Bhai Randhir Singh Nar Achet pap ti dar ri_1763366868725.mp3",
+      pageNumber: 220
+    },
+    {
+      id: "shabad-20",
+      title: "ਬਿਰਥਾ ਕਾਹੂ ਕਉਨ ਸਿਉ ਮਨ ਕੀ",
+      gurmukhi: `ਬਿਰਥਾ ਕਾਹੂ ਕਉਨ ਸਿਉ ਮਨ ਕੀ।
+ਜਾਗਤ ਸੋਵਤ ਸਪਨੈ ਜੀਵਨ ਕੀ।`,
+      meaning: "To whom can the mind speak its pain in vain? Whether awake, asleep or dreaming, throughout life.",
+      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਨ ਦਾ ਦਰਦ ਕਿਸ ਨੂੰ ਦੱਸੀਏ? ਜਾਗਦੇ, ਸੁੱਤੇ ਜਾਂ ਸੁਪਨੇ ਵਿੱਚ, ਸਾਰੇ ਜੀਵਨ ਵਿੱਚ ਇਹ ਦੁੱਖ ਰਹਿੰਦਾ ਹੈ।",
+      raag: {
+        name: "ਗਉੜੀ",
+        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
+        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੇ ਦਰਦ ਬਾਰੇ ਬੋਲਦਾ ਹੈ।"
+      },
+      raagId: "gauri",
+      audioUrl: "/attached_assets/Birtha Kaho Kaun Seo Man Ki Bhai Kuldeep Singh Ji Hazoori Ragi Darbar Sahib_1763366868724.mp3",
+      pageNumber: 220
     }
   ];
 
@@ -282,7 +520,7 @@ export class MemStorage implements IStorage {
     {
       id: "resource-biography",
       title: "ਸੰਪੂਰਨ ਜੀਵਨੀ",
-      description: "ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਦੀ ਵਿਸਥਾਰ ਜੀਵਨੀ, ਜਨਮ ਤੋਂ ਸ਼ਹੀਦੀ ਤੱਕ",
+      description: "ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀ ਵਿਸਥਾਰ ਜੀਵਨੀ, ਜਨਮ ਤੋਂ ਸ਼ਹੀਦੀ ਤੱਕ",
       pdfUrl: "/resources/biography.pdf",
       category: "ਜੀਵਨੀ"
     },
@@ -303,7 +541,7 @@ export class MemStorage implements IStorage {
     {
       id: "resource-shabads",
       title: "ਬਾਣੀ ਅਰਥ",
-      description: "ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ ਦੇ ਅਰਥ ਅਤੇ ਟੀਕਾ",
+      description: "ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ ਦੇ ਅਰਥ ਅਤੇ ਟੀਕਾ",
       pdfUrl: "/resources/shabads.pdf",
       category: "ਬਾਣੀ"
     },
