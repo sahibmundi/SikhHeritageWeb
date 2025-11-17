@@ -39,6 +39,13 @@ export function Footer() {
                 ਬਾਣੀ
               </button>
               <button
+                onClick={() => scrollToSection("audio")}
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors hover-elevate px-2 py-1 rounded-md text-left"
+                data-testid="link-footer-audio"
+              >
+                ਬਾਣੀ ਆਡੀਓ
+              </button>
+              <button
                 onClick={() => scrollToSection("raags")}
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors hover-elevate px-2 py-1 rounded-md text-left"
                 data-testid="link-footer-raags"
