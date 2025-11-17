@@ -1,4 +1,4 @@
-import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource, RaagInfo } from "@shared/schema";
+import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource, RaagInfo, AudioTrack } from "@shared/schema";
 
 export interface IStorage {
   // Biography
@@ -21,6 +21,10 @@ export interface IStorage {
   // Resources
   getResources(): Promise<Resource[]>;
   getResourcesByCategory(category: string): Promise<Resource[]>;
+  
+  // Audio
+  getAudioTracks(): Promise<AudioTrack[]>;
+  getAudioTracksByRaag(raagId: string): Promise<AudioTrack[]>;
 }
 
 // Load Gurdwara data from JSON file
@@ -28,6 +32,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { raags as raagsList } from "./raags-data.js";
+import { audioTracks as audioTracksList } from "./audio-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -596,6 +601,14 @@ export class MemStorage implements IStorage {
 
   async getShabadsByRaag(raagId: string): Promise<Shabad[]> {
     return this.shabads.filter(s => s.raagId === raagId);
+  }
+
+  async getAudioTracks(): Promise<AudioTrack[]> {
+    return audioTracksList;
+  }
+
+  async getAudioTracksByRaag(raagId: string): Promise<AudioTrack[]> {
+    return audioTracksList.filter(track => track.raagId === raagId);
   }
 }
 

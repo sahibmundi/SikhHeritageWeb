@@ -117,5 +117,21 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
+  // Audio endpoints
+  app.get("/api/audio", async (req, res) => {
+    try {
+      const { raagId } = req.query;
+      if (raagId && typeof raagId === "string") {
+        const tracks = await storage.getAudioTracksByRaag(raagId);
+        res.json(tracks);
+      } else {
+        const tracks = await storage.getAudioTracks();
+        res.json(tracks);
+      }
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch audio tracks" });
+    }
+  });
+
   return httpServer;
 }

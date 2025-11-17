@@ -77,3 +77,15 @@ export interface Resource {
   pdfUrl: string;
   category: string;
 }
+
+// Audio Track Type
+export interface AudioTrack {
+  id: string;
+  title: string;
+  raagId: string;
+  shabadId?: string;
+  performer: string;
+  duration: string;
+  audioUrl: string;
+  description: string;
+}
