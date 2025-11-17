@@ -32,21 +32,6 @@ import { raags as raagsList } from "./raags-data.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Chronological order mapping for Guru Tegh Bahadur Ji's journey
-const gurdwaraChronology: Record<string, { visitDate: string; order: number }> = {
-  "gurdwara-guru-ke-mahil": { visitDate: "1 ਅਪ੍ਰੈਲ 1621", order: 1 },
-  "gurdwara-sahib-bakala": { visitDate: "1644-1664", order: 2 },
-  "gurdwara-anandpur-sahib": { visitDate: "1665", order: 3 },
-  "gurdwara-tegh-bahadur-sahib-kurukshetra": { visitDate: "1665", order: 4 },
-  "takht-sri-patna-sahib": { visitDate: "22 ਦਸੰਬਰ 1666", order: 5 },
-  "gurdwara-damdama-sahib-dhubri": { visitDate: "1669", order: 6 },
-  "gurdwara-tegh-bahadur-sahib-bahadurgarh": { visitDate: "ਜੂਨ-ਸਤੰਬਰ 1675", order: 7 },
-  "gurdwara-damdama-sahib-talwandi-sabo": { visitDate: "1665-1675", order: 8 },
-  "gurdwara-sis-ganj-sahib-delhi": { visitDate: "24 ਨਵੰਬਰ 1675", order: 9 },
-  "gurdwara-rakab-ganj-sahib": { visitDate: "24 ਨਵੰਬਰ 1675", order: 10 },
-  "gurdwara-sis-ganj-sahib-anandpur": { visitDate: "17 ਨਵੰਬਰ 1675", order: 11 },
-};
-
 function loadGurdwaraData(): Gurdwara[] {
   try {
     const dataPath = path.join(__dirname, "gurdwara-data.json");
@@ -56,6 +41,8 @@ function loadGurdwaraData(): Gurdwara[] {
       name: string;
       content: string;
       pdfFileName: string | null;
+      chronologicalOrder?: number;
+      visitDate?: string;
     }>;
 
     // Manual PDF mapping based on file names in attached_assets
@@ -97,8 +84,6 @@ function loadGurdwaraData(): Gurdwara[] {
         label: "ਵਧੇਰੇ ਜਾਣਕਾਰੀ",
         fileName,
       }));
-
-      const chronology = gurdwaraChronology[g.id];
       
       return {
         id: g.id,
@@ -111,8 +96,8 @@ function loadGurdwaraData(): Gurdwara[] {
           mapEmbedUrl: undefined,
         },
         pdfAssets: pdfAssets.length > 0 ? pdfAssets : undefined,
-        visitDate: chronology?.visitDate,
-        chronologicalOrder: chronology?.order,
+        visitDate: g.visitDate,
+        chronologicalOrder: g.chronologicalOrder || 999,
       };
     })
     .sort((a, b) => (a.chronologicalOrder || 999) - (b.chronologicalOrder || 999));

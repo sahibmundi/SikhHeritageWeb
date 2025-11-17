@@ -97,15 +97,15 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
   }
 
   return (
-    <section id="gurdwaras" className="py-16 md:py-24 bg-white">
+    <section id="gurdwaras" className="py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1A44]">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1A44] dark:text-yellow-400">
             ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
           </h2>
           <div className="w-24 h-1 mt-4 mx-auto bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full" />
-          <p className="text-lg md:text-xl text-[#243763] mt-4">
+          <p className="text-lg md:text-xl text-[#243763] dark:text-gray-300 mt-4">
             ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦੁਰ ਜੀ ਨਾਲ ਜੁੜੇ ਇਤਿਹਾਸਕ ਗੁਰਧਾਮ
           </p>
         </div>
