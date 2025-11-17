@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Biography } from "@/components/Biography";
 import { Shabads } from "@/components/Shabads";
+import { AudioSection } from "@/components/AudioSection";
 import { Gurdwaras } from "@/components/Gurdwaras";
 import { Resources } from "@/components/Resources";
 import { RaagsSection } from "@/components/RaagsSection";
@@ -48,6 +49,7 @@ export default function Home() {
       <Hero />
       <Biography timeline={timeline} sections={biographySections} />
       <Shabads shabads={shabads} />
+      <AudioSection />
       <RaagsSection />
       <Gurdwaras gurdwaras={gurdwaras} />
       <Resources resources={resources} />
