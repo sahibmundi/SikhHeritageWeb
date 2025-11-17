@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import { MapPin, X, Calendar, ChevronRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { MapPin, X, Calendar, ChevronRight, ChevronLeft } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PdfList } from "@/components/PdfViewer";
 import { motion, AnimatePresence } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import type { Gurdwara } from "@shared/schema";
 
 interface GurdwarasProps {
@@ -14,6 +15,51 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
   const [selectedGurdwara, setSelectedGurdwara] = useState<Gurdwara | null>(
     null,
   );
+  
+  // Embla Carousel setup
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    loop: true,
+    slidesToScroll: 1,
+    breakpoints: {
+      '(min-width: 768px)': { slidesToScroll: 1 },
+    },
+  });
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   // 🔒 SCROLL LOCK FIX
   useEffect(() => {
@@ -44,6 +90,12 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
     },
   };
 
+  // Group gurdwaras into slides of 3
+  const slides = [];
+  for (let i = 0; i < gurdwaras.length; i += 3) {
+    slides.push(gurdwaras.slice(i, i + 3));
+  }
+
   return (
     <section id="gurdwaras" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,21 +110,52 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {gurdwaras.map((gurdwara) => (
-            <motion.div key={gurdwara.id} variants={itemVariants}>
-              <Card
-                className="cursor-pointer shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden bg-white"
-                onClick={() => setSelectedGurdwara(gurdwara)}
-              >
-                {/* Image */}
-                {gurdwara.imageUrl && (
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full shadow-lg bg-white dark:bg-gray-800 border-2 hover-elevate"
+            data-testid="button-carousel-prev"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+          
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full shadow-lg bg-white dark:bg-gray-800 border-2 hover-elevate"
+            data-testid="button-carousel-next"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+
+          {/* Embla Viewport */}
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {slides.map((slide, slideIndex) => (
+                <div
+                  key={slideIndex}
+                  className="flex-shrink-0 flex-grow-0 basis-full"
+                >
+                  <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2"
+                  >
+                    {slide.map((gurdwara) => (
+                      <motion.div key={gurdwara.id} variants={itemVariants}>
+                        <Card
+                          className="cursor-pointer shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden bg-white dark:bg-gray-800"
+                          onClick={() => setSelectedGurdwara(gurdwara)}
+                          data-testid={`card-gurdwara-${gurdwara.id}`}
+                        >
+                          {/* Image */}
+                          {gurdwara.imageUrl && (
                   <div className="aspect-video overflow-hidden bg-gray-200">
                     <img
                       src={gurdwara.imageUrl}
@@ -83,17 +166,17 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                 )}
 
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-[#0A1A44]">
+                  <CardTitle className="text-xl font-bold text-[#0A1A44] dark:text-yellow-400">
                     {gurdwara.name}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <p className="text-[#1b2553] text-sm line-clamp-3">
+                  <p className="text-[#1b2553] dark:text-gray-300 text-sm line-clamp-3">
                     {gurdwara.briefHistory}
                   </p>
 
-                  <p className="flex items-center gap-2 text-gray-600 text-sm">
+                  <p className="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
                     <MapPin className="w-4 h-4" />
                     {gurdwara.location.address}
                   </p>
@@ -105,6 +188,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
                       e.stopPropagation();
                       setSelectedGurdwara(gurdwara);
                     }}
+                    data-testid={`button-details-${gurdwara.id}`}
                   >
                     ਪੂਰੀ ਜਾਣਕਾਰੀ ਦੇਖੋ
                     <ChevronRight className="w-4 h-4" />
@@ -114,6 +198,28 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
             </motion.div>
           ))}
         </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-3 mt-12" data-testid="carousel-pagination">
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={`transition-all rounded-full ${
+                  index === selectedIndex
+                    ? "bg-gradient-to-r from-yellow-500 to-orange-500 w-12 h-3"
+                    : "bg-gray-300 dark:bg-gray-600 w-3 h-3 hover:bg-gray-400 dark:hover:bg-gray-500"
+                }`}
+                data-testid={`dot-${index}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* MODAL */}
         <AnimatePresence>
