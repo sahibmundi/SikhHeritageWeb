@@ -27,7 +27,7 @@ export function Shabads({ shabads }: ShabadsProps) {
             ਬਾਣੀ ਅਤੇ ਰਾਗ
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-shabads-subtitle">
-            ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ 15 ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹਨ
+            ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ 15 ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹਨ
           </p>
         </div>
 

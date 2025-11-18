@@ -61,7 +61,7 @@ export function AudioSection() {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ ਦਾ ਕੀਰਤਨ - ਉੱਚ ਪੱਧਰੀ ਰਾਗੀਆਂ ਦੀ ਆਵਾਜ਼ ਵਿੱਚ
+            ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀਆਂ ਬਾਣੀਆਂ ਦਾ ਕੀਰਤਨ - ਉੱਚ ਪੱਧਰੀ ਰਾਗੀਆਂ ਦੀ ਆਵਾਜ਼ ਵਿੱਚ
           </p>
         </motion.div>
 

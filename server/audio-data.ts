@@ -18,7 +18,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਭੁਪਿੰਦਰ ਸਿੰਘ, ਅਮਰਬੀਰ ਸਿੰਘ",
     duration: "23:34",
     audioUrl: "/attached_assets/SALOK MAHALA 9 ਸਲੋਕ ਮਹਲਾ ੯ KIRTAN ROOP VICH BHAI BHUPINDER SINGH HAZOORI RAGI AMARBIR SINGH_1763366868711.mp3",
-    description: "ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀ ਬਾਣੀ - ਕੀਰਤਨ ਰੂਪ ਵਿੱਚ"
+    description: "ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਦੀ ਬਾਣੀ - ਕੀਰਤਨ ਰੂਪ ਵਿੱਚ"
   },
   {
     id: "audio-2",
@@ -28,7 +28,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
     duration: "9:31",
     audioUrl: "/attached_assets/Bhai Randhir Singh Sadho Ram Sharan Bisrama Part 1 of 2_1763366868728.mp3",
-    description: "ਰਾਗ ਸੋਰਠਿ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਸੋਰਠਿ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-3",
@@ -48,7 +48,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕਮਲਜੀਤ ਸਿੰਘ",
     duration: "15:36",
     audioUrl: "/attached_assets/Sabh kich jiwat ko biwhar... Bhai kamaljeet singh ji darbar sahib amritsar_1763366868723.mp3",
-    description: "ਰਾਗ ਬਿਲਾਵਲੁ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਬਿਲਾਵਲੁ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-5",
@@ -58,7 +58,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
     duration: "11:13",
     audioUrl: "/attached_assets/Kou Mayi Bhuliyo Man Samjhave - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868730.mp3",
-    description: "ਰਾਗ ਧਨਾਸਰੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਧਨਾਸਰੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-6",
@@ -67,7 +67,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
     duration: "11:43",
     audioUrl: "/attached_assets/Man Kaha Bisario Raam Naam - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868715.mp3",
-    description: "ਰਾਗ ਗਉੜੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਗਉੜੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-7",
@@ -76,7 +76,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਗੁਰਦੇਵ ਸਿੰਘ",
     duration: "8:19",
     audioUrl: "/attached_assets/Shabad for Today (Thursday 19.05.2022) Man Re Kahan Bhaiyo Tai Baura -Bhai Gurdev Singh_1763366868727.mp3",
-    description: "ਰਾਗ ਤਿਲੰਗ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਤਿਲੰਗ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-8",
@@ -85,7 +85,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
     duration: "10:38",
     audioUrl: "/attached_assets/Kaha Bhuliyo Re Jhoote Lobh Laag - Bhai Randhir Singh - 03 12 06 - Live Sri Harmandir Sahib_1763366868714.mp3",
-    description: "ਰਾਗ ਗਉੜੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਗਉੜੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-9",
@@ -94,7 +94,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕਮਲਜੀਤ ਸਿੰਘ",
     duration: "13:14",
     audioUrl: "/attached_assets/Maai Man Mero Bas Nahi_1763366868718.mp3",
-    description: "ਰਾਗ ਬਿਲਾਵਲੁ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਬਿਲਾਵਲੁ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-10",
@@ -103,7 +103,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਜਗਤਾਰ ਸਿੰਘ",
     duration: "11:14",
     audioUrl: "/attached_assets/Maai Mai Dhan Paayo Har Naam_1763366868715.mp3",
-    description: "ਰਾਗ ਗਉੜੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਗਉੜੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-11",
@@ -112,7 +112,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
     duration: "6:03",
     audioUrl: "/attached_assets/Man Ki Man Hi Mahe Rahi_1763366868721.mp3",
-    description: "ਰਾਗ ਜੈਤਸਰੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਜੈਤਸਰੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-12",
@@ -121,7 +121,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕਮਲਜੀਤ ਸਿੰਘ",
     duration: "9:41",
     audioUrl: "/attached_assets/Man Re Kaun Kumat Tain Lini - Bhai Kamaljeet Singh Ji and Jatha (Mar 29 2011)_1763366868720.mp3",
-    description: "ਰਾਗ ਰਾਮਕਲੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਰਾਮਕਲੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-13",
@@ -130,7 +130,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕਮਲਜੀਤ ਸਿੰਘ",
     duration: "10:39",
     audioUrl: "/attached_assets/Man Re Prabh Ki Saran Bicharo_1763366868719.mp3",
-    description: "ਰਾਗ ਮਾਰੂ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਮਾਰੂ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-14",
@@ -139,7 +139,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕੁਲਦੀਪ ਸਿੰਘ",
     duration: "6:51",
     audioUrl: "/attached_assets/Paapi Hiye Main Kaam Basae_1763366868716.mp3",
-    description: "ਰਾਗ ਬਸੰਤ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਬਸੰਤ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-15",
@@ -148,7 +148,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਜਗਤਾਰ ਸਿੰਘ",
     duration: "7:14",
     audioUrl: "/attached_assets/Re Man Ram Sio Kar Preet_1763366868722.mp3",
-    description: "ਰਾਗ ਸਾਰੰਗ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਸਾਰੰਗ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-16",
@@ -157,7 +157,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕੁਲਦੀਪ ਸਿੰਘ",
     duration: "5:36",
     audioUrl: "/attached_assets/Re Nar Eh Sachi Jee Dhar_1763366868717.mp3",
-    description: "ਰਾਗ ਦੇਵਗੰਧਾਰੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਦੇਵਗੰਧਾਰੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-17",
@@ -166,7 +166,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
     duration: "8:47",
     audioUrl: "/attached_assets/Sadho Eho Man Geheyo Na Jayi - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868731.mp3",
-    description: "ਰਾਗ ਟੋਡੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਟੋਡੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-18",
@@ -175,7 +175,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕੁਲਦੀਪ ਸਿੰਘ",
     duration: "7:24",
     audioUrl: "/attached_assets/Birtha Kaho Kaun Seo Man Ki Bhai Kuldeep Singh Ji Hazoori Ragi Darbar Sahib_1763366868724.mp3",
-    description: "ਰਾਗ ਬਿਹਾਗੜਾ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਬਿਹਾਗੜਾ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-19",
@@ -184,7 +184,7 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਕਮਲਜੀਤ ਸਿੰਘ",
     duration: "4:17",
     audioUrl: "/attached_assets/Beet Jehe Beet Jehe_1763366868713.mp3",
-    description: "ਰਾਗ ਜੈਜਾਵੰਤੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਜੈਜਾਵੰਤੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
     id: "audio-20",
@@ -193,6 +193,6 @@ export const audioTracks: AudioTrack[] = [
     performer: "ਭਾਈ ਜਗਤਾਰ ਸਿੰਘ",
     duration: "11:01",
     audioUrl: "/attached_assets/jhoothi dekhi preet jagat meh bhai Jagtar Singh Ji hazoori ragi darbar sahib Amritsar_1763366868722.mp3",
-    description: "ਰਾਗ ਗਉੜੀ - ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
+    description: "ਰਾਗ ਗਉੜੀ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   }
 ];

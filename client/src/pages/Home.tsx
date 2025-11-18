@@ -2,13 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Biography } from "@/components/Biography";
-import { Shabads } from "@/components/Shabads";
+import { BaaniViewer } from "@/components/BaaniViewer";
 import { AudioSection } from "@/components/AudioSection";
 import { Gurdwaras } from "@/components/Gurdwaras";
 import { Resources } from "@/components/Resources";
-import { RaagsSection } from "@/components/RaagsSection";
 import { Footer } from "@/components/Footer";
-import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource } from "@shared/schema";
+import type { TimelineEvent, BiographySection, BaaniPage, Gurdwara, Resource } from "@shared/schema";
 
 export default function Home() {
   const { data: timeline = [], isLoading: timelineLoading } = useQuery<TimelineEvent[]>({
@@ -19,8 +18,8 @@ export default function Home() {
     queryKey: ["/api/biography/sections"]
   });
 
-  const { data: shabads = [], isLoading: shabadsLoading } = useQuery<Shabad[]>({
-    queryKey: ["/api/shabads"]
+  const { data: baaniPages = [], isLoading: baaniPagesLoading } = useQuery<BaaniPage[]>({
+    queryKey: ["/api/baani/pages"]
   });
 
   const { data: gurdwaras = [], isLoading: gurdwarasLoading } = useQuery<Gurdwara[]>({
@@ -32,7 +31,7 @@ export default function Home() {
   });
 
   // Show loading state while fetching data
-  if (timelineLoading || biographyLoading || shabadsLoading || gurdwarasLoading || resourcesLoading) {
+  if (timelineLoading || biographyLoading || baaniPagesLoading || gurdwarasLoading || resourcesLoading) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center" data-testid="page-loading">
         <div className="text-center space-y-4">
@@ -48,9 +47,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Biography timeline={timeline} sections={biographySections} />
-      <Shabads shabads={shabads} />
+      <BaaniViewer pages={baaniPages} />
       <AudioSection />
-      <RaagsSection />
       <Gurdwaras gurdwaras={gurdwaras} />
       <Resources resources={resources} />
       <Footer />

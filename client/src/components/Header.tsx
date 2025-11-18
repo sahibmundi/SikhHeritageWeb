@@ -87,7 +87,7 @@ export function Header() {
               </svg>
             </motion.div>
             <span className="text-lg sm:text-xl md:text-2xl font-semibold text-sidebar-foreground group-hover:text-sidebar-accent-foreground transition-colors">
-              ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ
+              ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ
             </span>
           </motion.button>
 
@@ -110,9 +110,9 @@ export function Header() {
                   />
                 </motion.button>
                 <motion.button
-                  onClick={() => scrollToSection("shabads")}
+                  onClick={() => scrollToSection("baani")}
                   className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
-                  data-testid="link-shabads"
+                  data-testid="link-baani"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -132,21 +132,6 @@ export function Header() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">ਬਾਣੀ ਆਡੀਓ</span>
-                  <motion.div 
-                    className="absolute inset-0 bg-sidebar-accent rounded-lg"
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.button>
-                <motion.button
-                  onClick={() => scrollToSection("raags")}
-                  className="text-base font-medium text-sidebar-foreground hover:text-sidebar-accent-foreground transition-all px-4 py-2 rounded-lg relative overflow-hidden group shadow-3d-hover"
-                  data-testid="link-raags"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="relative z-10">ਰਾਗ</span>
                   <motion.div 
                     className="absolute inset-0 bg-sidebar-accent rounded-lg"
                     initial={{ scale: 0, opacity: 0 }}
@@ -253,9 +238,9 @@ export function Header() {
                     ਜੀਵਨੀ
                   </motion.button>
                   <motion.button
-                    onClick={() => scrollToSection("shabads")}
+                    onClick={() => scrollToSection("baani")}
                     className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
-                    data-testid="link-shabads-mobile"
+                    data-testid="link-baani-mobile"
                     whileHover={{ x: 8 }}
                   >
                     ਬਾਣੀ
@@ -267,14 +252,6 @@ export function Header() {
                     whileHover={{ x: 8 }}
                   >
                     ਬਾਣੀ ਆਡੀਓ
-                  </motion.button>
-                  <motion.button
-                    onClick={() => scrollToSection("raags")}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md transition-colors shadow-3d-hover"
-                    data-testid="link-raags-mobile"
-                    whileHover={{ x: 8 }}
-                  >
-                    ਰਾਗ
                   </motion.button>
                   <motion.button
                     onClick={() => scrollToSection("gurdwaras")}

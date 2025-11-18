@@ -106,7 +106,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
           </h2>
           <div className="w-24 h-1 mt-4 mx-auto bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full" />
           <p className="text-lg md:text-xl text-[#243763] dark:text-gray-300 mt-4">
-            ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਨਾਲ ਜੁੜੇ ਇਤਿਹਾਸਕ ਗੁਰਧਾਮ
+            ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਨਾਲ ਜੁੜੇ ਇਤਿਹਾਸਕ ਗੁਰਧਾਮ
           </p>
         </div>
 
