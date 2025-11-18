@@ -28,10 +28,6 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 40269
-externalPort = 3002
-
-[[ports]]
 localPort = 40279
 externalPort = 3000
 
@@ -41,6 +37,7 @@ externalPort = 3001
 
 [nix]
 channel = "stable-25_05"
+packages = ["poppler", "imagemagick"]
 
 [deployment]
 deploymentTarget = "autoscale"
