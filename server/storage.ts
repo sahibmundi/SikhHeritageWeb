@@ -182,7 +182,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਚਿੰਤਾ ਤਾ ਕੀ ਕੀਜੀਐ ਜੋ ਅਨਹੋਨੀ ਹੋਇ।
 ਇਹੁ ਮਾਰਗੁ ਸੰਸਾਰ ਕੋ ਨਾਨਕੁ ਥਿਰੁ ਨਹੀ ਕੋਇ।`,
       meaning: "Only worry about that which is unexpected. This is the way of the world, O Nanak, nothing is permanent here.",
-      teeka: "ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ: ਇਸ ਸ਼ਬਦ ਵਿਚ ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜੀਵਨ ਅਸਥਾਈ ਹੈ ਅਤੇ ਸਾਨੂੰ ਉਹਨਾਂ ਗੱਲਾਂ ਦੀ ਫਿਕਰ ਨਹੀਂ ਕਰਨੀ ਚਾਹੀਦੀ ਜੋ ਸਾਡੇ ਵੱਸ ਵਿਚ ਨਹੀਂ ਹਨ। ਸੰਸਾਰ ਵਿਚ ਕੋਈ ਵੀ ਚੀਜ਼ ਸਥਾਈ ਨਹੀਂ, ਇਸ ਲਈ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਵਿਚ ਜੁੜਨਾ ਹੀ ਅਸਲ ਮਨੋਰਥ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਸਲੋਕ ਮਹਲਾ ੯",
         time: "ਕੋਈ ਖਾਸ ਸਮਾਂ ਨਹੀਂ",
@@ -199,7 +199,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਨ ਰੇ ਨਾਮੁ ਜਪਤ ਸੁਖੁ ਹੋਇ।
 ਬਿਨੁ ਹਰਿ ਭਜਨ ਜੀਵਨੁ ਸਭੁ ਸੋਇ।`,
       meaning: "O mind, by chanting the Name, peace is obtained. Without meditating on the Lord, the whole life is wasted.",
-      teeka: "ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ: ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਸੰਬੋਧਨ ਕਰ ਕੇ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਸਿਮਰਨ ਹੀ ਅਸਲ ਸੁਖ ਹੈ। ਬਿਨਾਂ ਭਜਨ ਦੇ ਜੀਵਨ ਵਿਅਰਥ ਹੈ, ਜਿਵੇਂ ਨੀਂਦ ਵਿੱਚ ਕੋਈ ਨਾ ਜਾਣੇ ਕਿ ਕੀ ਹੋ ਰਿਹਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -217,7 +217,7 @@ export class MemStorage implements IStorage {
 ਸੁਖ ਸਨੇਹੁ ਅਰੁ ਭੈ ਨਹੀ ਜਾ ਕੈ।
 ਕੰਚਨ ਮਾਟੀ ਮਾਨੈ।`,
       meaning: "One who does not feel pain in suffering, who is not attached to pleasure, who has no fear, and who sees gold and dust as the same.",
-      teeka: "ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ: ਇਸ ਸ਼ਬਦ ਵਿੱਚ ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜਿਹੜਾ ਮਨੁੱਖ ਦੁੱਖਾਂ-ਸੁੱਖਾਂ ਵਿੱਚ ਇਕੋ ਜਿਹਾ ਰਹਿੰਦਾ ਹੈ, ਜਿਸਨੂੰ ਮਾਇਆ ਦਾ ਮੋਹ ਨਹੀਂ, ਜੋ ਧਨ-ਦੌਲਤ ਅਤੇ ਮਿੱਟੀ ਵਿੱਚ ਕੋਈ ਫਰਕ ਨਹੀਂ ਸਮਝਦਾ - ਉਹ ਅਸਲ ਵਿੱਚ ਗਿਆਨਵਾਨ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਸੋਰਠਿ",
         time: "ਰਾਤ ਦਾ ਦੂਜਾ ਪਹਿਰ",
@@ -234,7 +234,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਕਬੀਰ ਮਨੁ ਨਿਰਮਲੁ ਭਇਆ ਜੈਸਾ ਗੰਗਾ ਨੀਰੁ।
 ਪਾਛੈ ਲਾਗੋ ਹਰਿ ਫਿਰੈ ਕਹਤ ਕਬੀਰ ਕਬੀਰ।`,
       meaning: "Kabir, my mind has become pure, like the water of the Ganges. The Lord follows after me, calling 'Kabir! Kabir!'",
-      teeka: "ਜਦੋਂ ਮਨੁੱਖ ਦਾ ਮਨ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਪਰਮਾਤਮਾ ਆਪ ਉਸ ਦੇ ਪਿੱਛੇ ਆਉਂਦਾ ਹੈ। ਗੁਰੂ ਜੀ ਦੱਸਦੇ ਹਨ ਕਿ ਸੁੱਚੇ ਮਨ ਨਾਲ ਪਰਮਾਤਮਾ ਦੀ ਪ੍ਰਾਪਤੀ ਹੁੰਦੀ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਆਸਾ",
         time: "ਰਾਤ ਦਾ ਚੌਥਾ ਪਹਿਰ",
@@ -251,7 +251,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਿਤ੍ਰ ਪਿਆਰੇ ਨੂੰ ਹਾਲ ਮੁਰੀਦਾਂ ਦਾ ਕਹਿਣਾ।
 ਤੁਧੁ ਬਿਨੁ ਰੋਗੁ ਰਜਾਈਆਂ ਦਾ ਓਢਣ ਨਾਗ ਨਿਵਾਸਾਂ ਦੇ ਰਹਿਣਾ।`,
       meaning: "Tell my Beloved Friend, the condition of His humble disciples. Without You, the comfort of the bed is a disease, and the blankets are like snakes.",
-      teeka: "ਗੁਰੂ ਜੀ ਪਰਮਾਤਮਾ ਨੂੰ ਮਿੱਤਰ ਕਹਿ ਕੇ ਸੰਬੋਧਨ ਕਰਦੇ ਹਨ ਅਤੇ ਦੱਸਦੇ ਹਨ ਕਿ ਉਸ ਤੋਂ ਬਿਨਾਂ ਸਾਰੇ ਸੁੱਖ ਦੁੱਖ ਬਣ ਜਾਂਦੇ ਹਨ। ਇਹ ਪਰਮਾਤਮਾ ਨਾਲ ਪ੍ਰੇਮ ਅਤੇ ਵਿਛੋੜੇ ਦਾ ਵਰਣਨ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਬਿਲਾਵਲ",
         time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -268,7 +268,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਰਾਮ ਨਾਮੁ ਜਪਿ ਜੀਵਣੁ ਮਰਣੁ।
 ਰਾਮ ਨਾਮੁ ਜਪਿ ਸਰਬ ਸੁਖ ਪੂਰਣ।`,
       meaning: "Chant the Lord's Name in life and death. Chanting the Lord's Name, all peace is found complete.",
-      teeka: "ਗੁਰੂ ਜੀ ਦੱਸਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਜੀਵਨ ਅਤੇ ਮੌਤ ਦੋਵਾਂ ਵਿੱਚ ਸਹਾਰਾ ਹੈ। ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਹੀ ਸੰਪੂਰਨ ਸੁਖ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਧਨਾਸਰੀ",
         time: "ਦਿਨ ਦਾ ਤੀਜਾ ਪਹਿਰ",
@@ -285,7 +285,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਨ ਕੀ ਮਨ ਹੀ ਮਾਹਿ ਰਹੀ।
 ਕਹਿ ਨਾਨਕ ਬਿਨੁ ਹਰਿ ਭਜਨ ਜਨਮੁ ਜੂਐ ਹਾਰਿਓ।`,
       meaning: "The desires of the mind remain within the mind. Says Nanak, without meditation on the Lord, life is lost in the gamble.",
-      teeka: "ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਮਨ ਦੀਆਂ ਕਾਮਨਾਵਾਂ ਮਨ ਵਿੱਚ ਹੀ ਰਹਿੰਦੀਆਂ ਹਨ। ਪਰਮਾਤਮਾ ਦੇ ਭਜਨ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਜੂਏ ਵਾਂਗ ਹਾਰ ਜਾਂਦਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -302,7 +302,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਨ ਰੇ ਪ੍ਰਭ ਕੀ ਸਰਨਿ ਬਿਚਾਰੋ।
 ਏਕ ਸਿਮਰਤ ਸਗਲ ਦੁਖ ਜਾਹੀ ਨਾਨਕ ਬੇੜਾ ਪਾਰੋ।`,
       meaning: "O mind, contemplate seeking God's Sanctuary. By meditating on the One, all pains depart; Nanak, the boat crosses over.",
-      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਸੰਬੋਧਨ ਕਰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦੀ ਸ਼ਰਣ ਵਿੱਚ ਆਉਣ ਬਾਰੇ ਵਿਚਾਰ ਕਰੋ। ਇੱਕ ਪਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਕਰਨ ਨਾਲ ਸਾਰੇ ਦੁੱਖ ਦੂਰ ਹੋ ਜਾਂਦੇ ਹਨ ਅਤੇ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਲੰਘ ਜਾਈਦਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -319,7 +319,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਨ ਰੇ ਕਵਨ ਕੁਮਤਿ ਤੈਂ ਲੀਨੀ।
 ਰਾਮ ਨਾਮ ਛਾਡਿ ਅਨ ਰਸ ਭੀਨੀ।`,
       meaning: "O mind, what evil counsel have you taken? You have abandoned the Lord's Name and are drenched in other pleasures.",
-      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਪੁੱਛਦੇ ਹਨ ਕਿ ਤੂੰ ਕਿਹੜੀ ਖੋਟੀ ਮੱਤ ਫੜੀ ਹੈ? ਤੂੰ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਛੱਡ ਕੇ ਹੋਰ ਰਸਾਂ ਵਿੱਚ ਭਿੱਜ ਗਿਆ ਹੈਂ। ਇਹ ਮਨ ਨੂੰ ਸੁਚੇਤ ਕਰਨ ਵਾਲੀ ਬਾਣੀ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -336,7 +336,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਨ ਰੇ ਰਾਮ ਸਿਉ ਕਰਿ ਪ੍ਰੀਤਿ।
 ਜਾ ਕੈ ਜੀਵਤ ਸਭ ਕੋ ਜੀਵੈ ਮਰੈ ਸੁ ਕਾਲੁ ਬੀਤਿ।`,
       meaning: "O mind, enshrine love for the Lord. By whose life all live, and whose death ends the cycle of time.",
-      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਨਾਲ ਪ੍ਰੀਤ ਕਰ। ਜਿਸ ਦੇ ਜੀਵਨ ਨਾਲ ਸਾਰੇ ਜੀਉਂਦੇ ਹਨ ਅਤੇ ਜਿਸ ਦੇ ਮਰਨ ਨਾਲ ਕਾਲ ਦਾ ਚੱਕਰ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -353,7 +353,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਾਈ ਮੈਂ ਧਨੁ ਪਾਇਓ ਹਰਿ ਨਾਮੁ।
 ਸਤਿਗੁਰ ਕਿਰਪਾ ਤੇ ਹਰਿ ਨਾਮੁ ਪਾਇਓ ਬਿਨਸਿਓ ਸਭੁ ਅਭਿਮਾਨੁ।`,
       meaning: "O mother, I have obtained the wealth of the Lord's Name. By the Guru's Grace, I have obtained the Lord's Name, and all ego has been dispelled.",
-      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੈਨੂੰ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਦਾ ਧਨ ਮਿਲ ਗਿਆ ਹੈ। ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਹਰਿ ਨਾਮ ਪ੍ਰਾਪਤ ਹੋਇਆ ਅਤੇ ਸਾਰਾ ਹੰਕਾਰ ਨਾਸ਼ ਹੋ ਗਿਆ।",
+      teeka: "",
       raag: {
         name: "ਬਿਲਾਵਲ",
         time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -370,7 +370,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਾਈ ਮਨ ਮੇਰੋ ਬਸਿ ਨਾਹੀ।
 ਕਰਮ ਕਰਤ ਫਿਰਿਓ ਅਨੇਕ ਜਨਮ ਫਿਰਿ ਫਿਰਿ ਪਛੁਤਾਹੀ।`,
       meaning: "O mother, my mind is not under my control. I have performed many deeds through countless lifetimes, and I regret them again and again.",
-      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੇਰਾ ਮਨ ਮੇਰੇ ਵੱਸ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਅਨੇਕਾਂ ਜਨਮਾਂ ਵਿੱਚ ਕਰਮ ਕਰਦਿਆਂ ਫਿਰਿਆ ਅਤੇ ਵਾਰ ਵਾਰ ਪਛੁਤਾਉਂਦਾ ਰਿਹਾ। ਇਹ ਮਨ ਦੀ ਚੰਚਲਤਾ ਬਾਰੇ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -387,7 +387,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਪਾਪੀ ਹਿਏ ਮੈ ਕਾਮੁ ਬਸੈ।
 ਕ੍ਰੋਧੁ ਅਹੰਕਾਰੁ ਤਿਸੁ ਸੰਗਿ ਹਸੈ।`,
       meaning: "In the sinful heart, lust dwells. Anger and ego laugh along with it.",
-      teeka: "ਗੁਰੂ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਪਾਪੀ ਮਨੁੱਖ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਕਾਮ ਵੱਸਦਾ ਹੈ। ਕ੍ਰੋਧ ਅਤੇ ਅਹੰਕਾਰ ਉਸ ਦੇ ਨਾਲ ਹੱਸਦੇ ਹਨ। ਇਹ ਪੰਜ ਵਿਕਾਰਾਂ ਬਾਰੇ ਸਿੱਖਿਆ ਦਿੰਦੀ ਬਾਣੀ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -404,7 +404,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਰੇ ਨਰ ਇਹੁ ਸਾਚੀ ਜੀਵ ਧਰ।
 ਨਾਮੁ ਨ ਜਪਹਿ ਤੇ ਕਾਹੇ ਆਏ ਕਰਮ ਧਰਮ ਸਭਿ ਬਿਸਰੇ।`,
       meaning: "O man, this is the true support of life. Those who do not chant the Name - why did they even come? All their deeds and Dharma have been forgotten.",
-      teeka: "ਗੁਰੂ ਜੀ ਮਨੁੱਖ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਨਾਮ ਹੀ ਜੀਵਨ ਦਾ ਸੱਚਾ ਆਧਾਰ ਹੈ। ਜਿਹੜੇ ਨਾਮ ਨਹੀਂ ਜਪਦੇ, ਉਹ ਕਿਉਂ ਆਏ? ਉਨ੍ਹਾਂ ਦੇ ਸਾਰੇ ਕਰਮ ਅਤੇ ਧਰਮ ਬਿਸਰ ਗਏ ਹਨ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -421,7 +421,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਕੋਊ ਮਾਈ ਭੂਲਿਓ ਮਨੁ ਸਮਝਾਵੈ।
 ਬਿਨੁ ਹਰਿ ਭਜਨ ਜਨਮੁ ਬ੍ਰਿਥਾ ਜਾਵੈ।`,
       meaning: "If only someone, O mother, would explain to my wandering mind. Without the Lord's meditation, this life is passing in vain.",
-      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਕਾਸ਼ ਕੋਈ ਮੇਰੇ ਭਟਕੇ ਹੋਏ ਮਨ ਨੂੰ ਸਮਝਾ ਦੇਵੇ। ਪਰਮਾਤਮਾ ਦੇ ਭਜਨ ਬਿਨਾਂ ਜੀਵਨ ਵਿਅਰਥ ਜਾ ਰਿਹਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -438,7 +438,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਸਾਧੋ ਇਹੁ ਮਨੁ ਗਹਿਓ ਨ ਜਾਇ।
 ਜੈਸੇ ਮਧੁਕਰ ਫੁਲ ਫੁਲਿ ਡੋਲੈ ਠਾਉ ਬਸੈ ਕਿਹ ਜਾਇ।`,
       meaning: "O holy one, this mind cannot be caught. Like the bumble bee that wanders from flower to flower - where can it settle?",
-      teeka: "ਗੁਰੂ ਜੀ ਸੰਤਾਂ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਫੜਿਆ ਨਹੀਂ ਜਾਂਦਾ। ਜਿਵੇਂ ਭੌਰਾ ਫੁੱਲ-ਫੁੱਲ ਵਿੱਚ ਘੁੰਮਦਾ ਹੈ, ਇਹ ਕਿਥੇ ਜਾ ਕੇ ਟਿਕਦਾ ਹੈ? ਇਹ ਮਨ ਦੀ ਚੰਚਲਤਾ ਦਾ ਵਰਣਨ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -455,7 +455,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਸਾਧੋ ਰਾਮ ਸਰਨਿ ਬਿਸਰਾਮਾ।
 ਅਨ ਤਿਆਗਿ ਭਜੀਐ ਇਕੁ ਰਾਮਾ।`,
       meaning: "O holy one, the Lord's Sanctuary is the place of rest. Abandon all else and meditate on the One Lord.",
-      teeka: "ਗੁਰੂ ਜੀ ਸੰਤਾਂ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦੀ ਸ਼ਰਣ ਵਿੱਚ ਹੀ ਅਸਲ ਅਰਾਮ ਹੈ। ਬਾਕੀ ਸਭ ਕੁਝ ਛੱਡ ਕੇ ਇੱਕ ਰਾਮ ਦਾ ਭਜਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -472,7 +472,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਮਨ ਰੇ ਕਾਹਨ ਭਇਓ ਤੈ ਬਾਵਰਾ।
 ਪਾਇਓ ਮਾਨਸ ਜਨਮ ਗੁੰਮਾਇਓ ਕਰਤ ਬਿਕਾਰ ਬਿਕਾਰਾ।`,
       meaning: "O mind, why have you become so foolish? You have obtained this precious human life, but you are wasting it doing bad deeds.",
-      teeka: "ਗੁਰੂ ਜੀ ਮਨ ਨੂੰ ਫਟਕਾਰਦੇ ਹਨ ਕਿ ਤੂੰ ਕਿਉਂ ਬਾਵਲਾ ਹੋ ਗਿਆ ਹੈਂ? ਤੂੰ ਮਨੁੱਖ ਜਨਮ ਪਾਇਆ ਪਰ ਇਸ ਨੂੰ ਵਿਕਾਰ ਕਰਦਿਆਂ ਗੁਆ ਰਿਹਾ ਹੈਂ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -489,7 +489,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਨਰ ਅਚੇਤ ਪਾਪ ਤੇ ਡਰਰੀ।
 ਸੁਖ ਸੰਪਤਿ ਜੋਬਨ ਧਨ ਮਾਇਆ ਸਗਰੀ।`,
       meaning: "O thoughtless man, fear sin. All comforts, wealth, youth, riches and Maya.",
-      teeka: "ਗੁਰੂ ਜੀ ਬੇਸੁਰਤ ਮਨੁੱਖ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਾਪਾਂ ਤੋਂ ਡਰ। ਸਾਰੇ ਸੁੱਖ, ਸੰਪਤੀਆਂ, ਜੁਆਨੀ, ਧਨ ਅਤੇ ਮਾਇਆ ਨਾਸ਼ਵਾਨ ਹਨ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
@@ -506,7 +506,7 @@ export class MemStorage implements IStorage {
       gurmukhi: `ਬਿਰਥਾ ਕਾਹੂ ਕਉਨ ਸਿਉ ਮਨ ਕੀ।
 ਜਾਗਤ ਸੋਵਤ ਸਪਨੈ ਜੀਵਨ ਕੀ।`,
       meaning: "To whom can the mind speak its pain in vain? Whether awake, asleep or dreaming, throughout life.",
-      teeka: "ਗੁਰੂ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਨ ਦਾ ਦਰਦ ਕਿਸ ਨੂੰ ਦੱਸੀਏ? ਜਾਗਦੇ, ਸੁੱਤੇ ਜਾਂ ਸੁਪਨੇ ਵਿੱਚ, ਸਾਰੇ ਜੀਵਨ ਵਿੱਚ ਇਹ ਦੁੱਖ ਰਹਿੰਦਾ ਹੈ।",
+      teeka: "",
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
