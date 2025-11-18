@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import khandaImage from "@assets/stock_images/sikh_khanda_symbol_s_6694705b.jpg";
 
 export function Hero() {
   return (
@@ -13,14 +12,6 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-      />
-      
-      <motion.div 
-        className="absolute inset-0 opacity-5"
-        style={{ backgroundImage: `url(${khandaImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-        initial={{ scale: 1.2, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.05 }}
-        transition={{ duration: 2, ease: "easeOut" }}
       />
       
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />

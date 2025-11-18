@@ -3,7 +3,6 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import ekOnkarLogo from "@assets/stock_images/ek_onkar_sacred_sikh_6553dfa6.jpg";
 
 export function Header() {
   const [location] = useLocation();
@@ -65,15 +64,27 @@ export function Header() {
             whileTap={{ scale: 0.98 }}
           >
             <motion.div 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-sidebar-foreground shadow-lg glow-border"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-sidebar-foreground shadow-lg glow-border bg-sidebar-accent flex items-center justify-center"
               whileHover={{ rotate: 360, borderColor: "#f97316" }}
               transition={{ duration: 0.6 }}
             >
-              <img 
-                src={ekOnkarLogo} 
-                alt="Ek Onkar" 
-                className="w-full h-full object-cover"
-              />
+              <svg
+                viewBox="0 0 100 100"
+                className="w-6 h-6 md:w-8 md:h-8 fill-sidebar-foreground"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <text
+                  x="50"
+                  y="50"
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                  fontSize="50"
+                  fontWeight="bold"
+                  fontFamily="Arial, sans-serif"
+                >
+                  ੴ
+                </text>
+              </svg>
             </motion.div>
             <span className="text-lg sm:text-xl md:text-2xl font-semibold text-sidebar-foreground group-hover:text-sidebar-accent-foreground transition-colors">
               ਸ਼੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ
