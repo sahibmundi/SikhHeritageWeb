@@ -57,7 +57,7 @@ export function Shabads({ shabads }: ShabadsProps) {
                     <span className="text-sm text-accent-foreground">ਸਮਾਂ: {shabad.raag.time}</span>
                   </div>
                   <div className="px-4 py-2 bg-accent border border-accent-border rounded-md shadow-3d glow-border-orange">
-                    <span className="text-sm text-accent-foreground">ਮੂਡ: {shabad.raag.mood}</span>
+                    <span className="text-sm text-accent-foreground">ਰਸ: {shabad.raag.ras}</span>
                   </div>
                 </div>
               </CardHeader>
