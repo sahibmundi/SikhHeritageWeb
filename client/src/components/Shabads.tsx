@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Play, Pause } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Shabad } from "@shared/schema";
@@ -9,18 +9,7 @@ interface ShabadsProps {
 }
 
 export function Shabads({ shabads }: ShabadsProps) {
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [playingId, setPlayingId] = useState<string | null>(null);
-
-  const toggleExpand = (id: string) => {
-    const newExpanded = new Set(expandedIds);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedIds(newExpanded);
-  };
 
   const toggleAudio = (id: string) => {
     if (playingId === id) {
@@ -75,25 +64,6 @@ export function Shabads({ shabads }: ShabadsProps) {
                   <p className="text-base md:text-lg leading-relaxed text-foreground/80 whitespace-pre-line">
                     {shabad.meaning}
                   </p>
-                </div>
-
-                <div>
-                  <button
-                    onClick={() => toggleExpand(shabad.id)}
-                    className="flex items-center gap-2 text-primary hover:text-primary/80 font-medium hover-elevate px-3 py-2 rounded-md transition-colors"
-                    data-testid={`button-toggle-teeka-${shabad.id}`}
-                  >
-                    {expandedIds.has(shabad.id) ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                    ਪ੍ਰੋ. ਸਾਹਿਬ ਸਿੰਘ ਜੀ ਦੀ ਟੀਕਾ
-                  </button>
-                  
-                  {expandedIds.has(shabad.id) && (
-                    <div className="mt-4 p-6 bg-muted/50 border border-border rounded-lg">
-                      <p className="text-base leading-relaxed text-foreground/80 whitespace-pre-line">
-                        {shabad.teeka}
-                      </p>
-                    </div>
-                  )}
                 </div>
 
                 <div className="pt-4 border-t border-border">
