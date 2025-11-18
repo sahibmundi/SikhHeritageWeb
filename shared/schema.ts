@@ -23,7 +23,7 @@ export interface RaagInfo {
   name: string;
   nameEnglish: string;
   time: string;
-  mood: string;
+  ras: string;
   significance: string;
   shabadCount: number;
   description: string;
@@ -39,7 +39,7 @@ export interface Shabad {
   raag: {
     name: string;
     time: string;
-    mood: string;
+    ras: string;
     significance: string;
   };
   raagId?: string;

@@ -186,7 +186,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਸਲੋਕ ਮਹਲਾ ੯",
         time: "ਕੋਈ ਖਾਸ ਸਮਾਂ ਨਹੀਂ",
-        mood: "ਸ਼ਾਂਤ ਅਤੇ ਗਿਆਨਵਾਨ",
+        ras: "ਸ਼ਾਂਤ ਅਤੇ ਗਿਆਨਵਾਨ",
         significance: "ਇਹ ਸਲੋਕ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹੈ ਅਤੇ ਜੀਵਨ ਦੀ ਅਸਥਾਈਤਾ ਅਤੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਦੇ ਮਹੱਤਵ ਬਾਰੇ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -203,7 +203,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਇੱਕ ਗੰਭੀਰ ਰਾਗ ਹੈ ਜੋ ਸ਼ਾਮ ਦੇ ਸਮੇਂ ਗਾਇਆ ਜਾਂਦਾ ਹੈ। ਇਹ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਅਤੇ ਇਕਾਗਰ ਕਰਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -221,7 +221,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਸੋਰਠਿ",
         time: "ਰਾਤ ਦਾ ਦੂਜਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਵੈਰਾਗੀ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਵੈਰਾਗੀ",
         significance: "ਰਾਗ ਸੋਰਠਿ ਵੈਰਾਗ ਅਤੇ ਨਿਰਲਿਪਤਤਾ ਦਾ ਭਾਵ ਜਗਾਉਂਦਾ ਹੈ। ਇਹ ਰਾਗ ਮਨ ਨੂੰ ਮਾਇਆ ਤੋਂ ਉਪਰਾਮ ਕਰਨ ਵਿੱਚ ਸਹਾਈ ਹੈ।"
       },
       raagId: "sorath",
@@ -238,7 +238,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਆਸਾ",
         time: "ਰਾਤ ਦਾ ਚੌਥਾ ਪਹਿਰ",
-        mood: "ਆਸ, ਆਸ਼ਾਵਾਦੀ",
+        ras: "ਆਸ, ਆਸ਼ਾਵਾਦੀ",
         significance: "ਰਾਗ ਆਸਾ ਆਸ਼ਾ ਅਤੇ ਉਮੀਦ ਦਾ ਰਾਗ ਹੈ।"
       },
       raagId: "asa",
@@ -255,7 +255,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਬਿਲਾਵਲ",
         time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
+        ras: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
         significance: "ਰਾਗ ਬਿਲਾਵਲ ਸਵੇਰੇ ਦਾ ਰਾਗ ਹੈ ਜੋ ਨਵੀਂ ਸ਼ੁਰੂਆਤ ਦਾ ਭਾਵ ਦਿੰਦਾ ਹੈ।"
       },
       raagId: "bilawal",
@@ -272,7 +272,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਧਨਾਸਰੀ",
         time: "ਦਿਨ ਦਾ ਤੀਜਾ ਪਹਿਰ",
-        mood: "ਮਧੁਰ, ਪੁਰਾਣਾ",
+        ras: "ਮਧੁਰ, ਪੁਰਾਣਾ",
         significance: "ਰਾਗ ਧਨਾਸਰੀ ਪਰਮਾਤਮਾ ਦੀ ਸਿਫਤਿ ਸਾਲਾਹ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।"
       },
       raagId: "dhanasri",
@@ -289,7 +289,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਗੰਭੀਰ ਚਿੰਤਨ ਲਈ ਹੈ।"
       },
       raagId: "gauri",
@@ -306,7 +306,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਪਰਮਾਤਮਾ ਦੀ ਯਾਦ ਲਈ ਹੈ।"
       },
       raagId: "gauri",
@@ -323,7 +323,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਨੂੰ ਉਲਾਂਭੇ ਦੇਣ ਲਈ ਹੈ।"
       },
       raagId: "gauri",
@@ -340,7 +340,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਪ੍ਰੀਤ ਦੇ ਭਾਵ ਲਈ ਹੈ।"
       },
       raagId: "gauri",
@@ -357,7 +357,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਬਿਲਾਵਲ",
         time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
+        ras: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
         significance: "ਰਾਗ ਬਿਲਾਵਲ ਆਨੰਦ ਅਤੇ ਪ੍ਰਾਪਤੀ ਦਾ ਭਾਵ ਦਿੰਦਾ ਹੈ।"
       },
       raagId: "bilawal",
@@ -374,7 +374,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਲਈ ਹੈ।"
       },
       raagId: "gauri",
@@ -391,7 +391,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਵਿਕਾਰਾਂ ਤੋਂ ਦੂਰ ਰਹਿਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -408,7 +408,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਜੀਵਨ ਦਾ ਉਦੇਸ਼ ਸਮਝਾਉਂਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -425,7 +425,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਨੂੰ ਸਮਝਾਉਣ ਲਈ ਹੈ।"
       },
       raagId: "gauri",
@@ -442,7 +442,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੇ ਸੁਭਾਅ ਬਾਰੇ ਸਮਝਾਉਂਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -459,7 +459,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਸ਼ਰਣਾਗਤੀ ਦਾ ਭਾਵ ਪੈਦਾ ਕਰਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -476,7 +476,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਮਨੁੱਖਾ ਜਨਮ ਦੀ ਮਹੱਤਤਾ ਸਮਝਾਉਂਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -493,7 +493,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਪਾਪਾਂ ਤੋਂ ਬਚਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
       },
       raagId: "gauri",
@@ -510,7 +510,7 @@ export class MemStorage implements IStorage {
       raag: {
         name: "ਗਉੜੀ",
         time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        mood: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
+        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
         significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੇ ਦਰਦ ਬਾਰੇ ਬੋਲਦਾ ਹੈ।"
       },
       raagId: "gauri",
