@@ -12,14 +12,11 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "dev"
+args = "Start application"
 
 [[workflows.workflow]]
-name = "dev"
+name = "Start application"
 author = "agent"
-
-[workflows.workflow.metadata]
-outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
@@ -33,6 +30,10 @@ externalPort = 80
 [[ports]]
 localPort = 40279
 externalPort = 3000
+
+[[ports]]
+localPort = 46665
+externalPort = 3001
 
 [nix]
 channel = "stable-25_05"
