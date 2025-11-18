@@ -17,34 +17,12 @@ export interface BiographySection {
   content: string;
 }
 
-// Raag Information Type
-export interface RaagInfo {
+// Baani Page Type
+export interface BaaniPage {
   id: string;
-  name: string;
-  nameEnglish: string;
-  time: string;
-  ras: string;
-  significance: string;
-  shabadCount: number;
-  description: string;
-}
-
-// Shabad Type
-export interface Shabad {
-  id: string;
+  pageNumber: number;
+  imageUrl: string;
   title: string;
-  gurmukhi: string;
-  meaning: string;
-  teeka: string;
-  raag: {
-    name: string;
-    time: string;
-    ras: string;
-    significance: string;
-  };
-  raagId?: string;
-  audioUrl?: string;
-  pageNumber?: number;
 }
 
 // PDF Asset Type
@@ -78,12 +56,10 @@ export interface Resource {
   category: string;
 }
 
-// Audio Track Type
+// Audio Track Type (kept for future use, but removed raagId/shabadId)
 export interface AudioTrack {
   id: string;
   title: string;
-  raagId: string;
-  shabadId?: string;
   performer: string;
   duration: string;
   audioUrl: string;

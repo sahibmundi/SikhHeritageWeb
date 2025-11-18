@@ -1,18 +1,14 @@
-import type { TimelineEvent, BiographySection, Shabad, Gurdwara, Resource, RaagInfo, AudioTrack } from "@shared/schema";
+import type { TimelineEvent, BiographySection, BaaniPage, Gurdwara, Resource, AudioTrack } from "@shared/schema";
 
 export interface IStorage {
   // Biography
   getTimeline(): Promise<TimelineEvent[]>;
   getBiographySections(): Promise<BiographySection[]>;
   
-  // Shabads
-  getShabads(): Promise<Shabad[]>;
-  getShabadById(id: string): Promise<Shabad | null>;
-  getShabadsByRaag(raagId: string): Promise<Shabad[]>;
-  
-  // Raags
-  getRaags(): Promise<RaagInfo[]>;
-  getRaagById(id: string): Promise<RaagInfo | null>;
+  // Baani Pages
+  getBaaniPages(): Promise<BaaniPage[]>;
+  getBaaniPageById(id: string): Promise<BaaniPage | null>;
+  getBaaniPageByNumber(pageNumber: number): Promise<BaaniPage | null>;
   
   // Gurdwaras
   getGurdwaras(): Promise<Gurdwara[]>;
@@ -24,14 +20,13 @@ export interface IStorage {
   
   // Audio
   getAudioTracks(): Promise<AudioTrack[]>;
-  getAudioTracksByRaag(raagId: string): Promise<AudioTrack[]>;
 }
 
 // Load Gurdwara data from JSON file
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { raags as raagsList } from "./raags-data.js";
+import { baaniPages as baaniPagesList } from "./baani-pages-data.js";
 import { audioTracks as audioTracksList } from "./audio-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -113,7 +108,7 @@ function loadGurdwaraData(): Gurdwara[] {
 }
 
 export class MemStorage implements IStorage {
-  private raags: RaagInfo[] = raagsList;
+  private baaniPages: BaaniPage[] = baaniPagesList;
   
   private timeline: TimelineEvent[] = [
     { year: "1621", label: "ਜਨਮ", sectionId: "janm" },
@@ -175,349 +170,6 @@ export class MemStorage implements IStorage {
     }
   ];
 
-  private shabads: Shabad[] = [
-    {
-      id: "shabad-1",
-      title: "ਸਲੋਕ ਮਹਲਾ ੯",
-      gurmukhi: `ਚਿੰਤਾ ਤਾ ਕੀ ਕੀਜੀਐ ਜੋ ਅਨਹੋਨੀ ਹੋਇ।
-ਇਹੁ ਮਾਰਗੁ ਸੰਸਾਰ ਕੋ ਨਾਨਕੁ ਥਿਰੁ ਨਹੀ ਕੋਇ।`,
-      meaning: "Only worry about that which is unexpected. This is the way of the world, O Nanak, nothing is permanent here.",
-      teeka: "",
-      raag: {
-        name: "ਸਲੋਕ ਮਹਲਾ ੯",
-        time: "ਕੋਈ ਖਾਸ ਸਮਾਂ ਨਹੀਂ",
-        ras: "ਸ਼ਾਂਤ ਅਤੇ ਗਿਆਨਵਾਨ",
-        significance: "ਇਹ ਸਲੋਕ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹੈ ਅਤੇ ਜੀਵਨ ਦੀ ਅਸਥਾਈਤਾ ਅਤੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਦੇ ਮਹੱਤਵ ਬਾਰੇ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/SALOK MAHALA 9 ਸਲੋਕ ਮਹਲਾ ੯ KIRTAN ROOP VICH BHAI BHUPINDER SINGH HAZOORI RAGI AMARBIR SINGH_1763366868711.mp3",
-      pageNumber: 1428
-    },
-    {
-      id: "shabad-2",
-      title: "ਮਨ ਰੇ ਨਾਮੁ ਜਪਤ ਸੁਖੁ ਹੋਇ",
-      gurmukhi: `ਮਨ ਰੇ ਨਾਮੁ ਜਪਤ ਸੁਖੁ ਹੋਇ।
-ਬਿਨੁ ਹਰਿ ਭਜਨ ਜੀਵਨੁ ਸਭੁ ਸੋਇ।`,
-      meaning: "O mind, by chanting the Name, peace is obtained. Without meditating on the Lord, the whole life is wasted.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਇੱਕ ਗੰਭੀਰ ਰਾਗ ਹੈ ਜੋ ਸ਼ਾਮ ਦੇ ਸਮੇਂ ਗਾਇਆ ਜਾਂਦਾ ਹੈ। ਇਹ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਅਤੇ ਇਕਾਗਰ ਕਰਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/3711/35710/1.mp3",
-      pageNumber: 219
-    },
-    {
-      id: "shabad-3",
-      title: "ਜੋ ਨਰੁ ਦੁਖ ਵਿਚਿ ਦੁਖੁ ਨਹੀ ਮਾਨੈ",
-      gurmukhi: `ਜੋ ਨਰੁ ਦੁਖ ਵਿਚਿ ਦੁਖੁ ਨਹੀ ਮਾਨੈ।
-ਸੁਖ ਸਨੇਹੁ ਅਰੁ ਭੈ ਨਹੀ ਜਾ ਕੈ।
-ਕੰਚਨ ਮਾਟੀ ਮਾਨੈ।`,
-      meaning: "One who does not feel pain in suffering, who is not attached to pleasure, who has no fear, and who sees gold and dust as the same.",
-      teeka: "",
-      raag: {
-        name: "ਸੋਰਠਿ",
-        time: "ਰਾਤ ਦਾ ਦੂਜਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਵੈਰਾਗੀ",
-        significance: "ਰਾਗ ਸੋਰਠਿ ਵੈਰਾਗ ਅਤੇ ਨਿਰਲਿਪਤਤਾ ਦਾ ਭਾਵ ਜਗਾਉਂਦਾ ਹੈ। ਇਹ ਰਾਗ ਮਨ ਨੂੰ ਮਾਇਆ ਤੋਂ ਉਪਰਾਮ ਕਰਨ ਵਿੱਚ ਸਹਾਈ ਹੈ।"
-      },
-      raagId: "sorath",
-      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/4160/40100/1.mp3",
-      pageNumber: 633
-    },
-    {
-      id: "shabad-4",
-      title: "ਕਬੀਰ ਮਨੁ ਨਿਰਮਲੁ ਭਇਆ",
-      gurmukhi: `ਕਬੀਰ ਮਨੁ ਨਿਰਮਲੁ ਭਇਆ ਜੈਸਾ ਗੰਗਾ ਨੀਰੁ।
-ਪਾਛੈ ਲਾਗੋ ਹਰਿ ਫਿਰੈ ਕਹਤ ਕਬੀਰ ਕਬੀਰ।`,
-      meaning: "Kabir, my mind has become pure, like the water of the Ganges. The Lord follows after me, calling 'Kabir! Kabir!'",
-      teeka: "",
-      raag: {
-        name: "ਆਸਾ",
-        time: "ਰਾਤ ਦਾ ਚੌਥਾ ਪਹਿਰ",
-        ras: "ਆਸ, ਆਸ਼ਾਵਾਦੀ",
-        significance: "ਰਾਗ ਆਸਾ ਆਸ਼ਾ ਅਤੇ ਉਮੀਦ ਦਾ ਰਾਗ ਹੈ।"
-      },
-      raagId: "asa",
-      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/3841/36990/1.mp3",
-      pageNumber: 331
-    },
-    {
-      id: "shabad-5",
-      title: "ਮਿਤ੍ਰ ਪਿਆਰੇ ਨੂੰ",
-      gurmukhi: `ਮਿਤ੍ਰ ਪਿਆਰੇ ਨੂੰ ਹਾਲ ਮੁਰੀਦਾਂ ਦਾ ਕਹਿਣਾ।
-ਤੁਧੁ ਬਿਨੁ ਰੋਗੁ ਰਜਾਈਆਂ ਦਾ ਓਢਣ ਨਾਗ ਨਿਵਾਸਾਂ ਦੇ ਰਹਿਣਾ।`,
-      meaning: "Tell my Beloved Friend, the condition of His humble disciples. Without You, the comfort of the bed is a disease, and the blankets are like snakes.",
-      teeka: "",
-      raag: {
-        name: "ਬਿਲਾਵਲ",
-        time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
-        significance: "ਰਾਗ ਬਿਲਾਵਲ ਸਵੇਰੇ ਦਾ ਰਾਗ ਹੈ ਜੋ ਨਵੀਂ ਸ਼ੁਰੂਆਤ ਦਾ ਭਾਵ ਦਿੰਦਾ ਹੈ।"
-      },
-      raagId: "bilawal",
-      audioUrl: "https://www.searchgurbani.com/shabad_audio/01/4658/45370/1.mp3",
-      pageNumber: 819
-    },
-    {
-      id: "shabad-6",
-      title: "ਰਾਮ ਨਾਮੁ ਜਪਿ ਜੀਵਣੁ ਮਰਣੁ",
-      gurmukhi: `ਰਾਮ ਨਾਮੁ ਜਪਿ ਜੀਵਣੁ ਮਰਣੁ।
-ਰਾਮ ਨਾਮੁ ਜਪਿ ਸਰਬ ਸੁਖ ਪੂਰਣ।`,
-      meaning: "Chant the Lord's Name in life and death. Chanting the Lord's Name, all peace is found complete.",
-      teeka: "",
-      raag: {
-        name: "ਧਨਾਸਰੀ",
-        time: "ਦਿਨ ਦਾ ਤੀਜਾ ਪਹਿਰ",
-        ras: "ਮਧੁਰ, ਪੁਰਾਣਾ",
-        significance: "ਰਾਗ ਧਨਾਸਰੀ ਪਰਮਾਤਮਾ ਦੀ ਸਿਫਤਿ ਸਾਲਾਹ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।"
-      },
-      raagId: "dhanasri",
-      audioUrl: "/attached_assets/Man Kaha Bisario Raam Naam - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868715.mp3",
-      pageNumber: 685
-    },
-    {
-      id: "shabad-7",
-      title: "ਮਨ ਕੀ ਮਨ ਹੀ ਮਾਹਿ ਰਹੀ",
-      gurmukhi: `ਮਨ ਕੀ ਮਨ ਹੀ ਮਾਹਿ ਰਹੀ।
-ਕਹਿ ਨਾਨਕ ਬਿਨੁ ਹਰਿ ਭਜਨ ਜਨਮੁ ਜੂਐ ਹਾਰਿਓ।`,
-      meaning: "The desires of the mind remain within the mind. Says Nanak, without meditation on the Lord, life is lost in the gamble.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਗੰਭੀਰ ਚਿੰਤਨ ਲਈ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Man Ki Man Hi Mahe Rahi_1763366868721.mp3",
-      pageNumber: 221
-    },
-    {
-      id: "shabad-8",
-      title: "ਮਨ ਰੇ ਪ੍ਰਭ ਕੀ ਸਰਨਿ ਬਿਚਾਰੋ",
-      gurmukhi: `ਮਨ ਰੇ ਪ੍ਰਭ ਕੀ ਸਰਨਿ ਬਿਚਾਰੋ।
-ਏਕ ਸਿਮਰਤ ਸਗਲ ਦੁਖ ਜਾਹੀ ਨਾਨਕ ਬੇੜਾ ਪਾਰੋ।`,
-      meaning: "O mind, contemplate seeking God's Sanctuary. By meditating on the One, all pains depart; Nanak, the boat crosses over.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਪਰਮਾਤਮਾ ਦੀ ਯਾਦ ਲਈ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Man Re Prabh Ki Saran Bicharo_1763366868719.mp3",
-      pageNumber: 219
-    },
-    {
-      id: "shabad-9",
-      title: "ਮਨ ਰੇ ਕਵਨ ਕੁਮਤਿ ਤੈਂ ਲੀਨੀ",
-      gurmukhi: `ਮਨ ਰੇ ਕਵਨ ਕੁਮਤਿ ਤੈਂ ਲੀਨੀ।
-ਰਾਮ ਨਾਮ ਛਾਡਿ ਅਨ ਰਸ ਭੀਨੀ।`,
-      meaning: "O mind, what evil counsel have you taken? You have abandoned the Lord's Name and are drenched in other pleasures.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਨੂੰ ਉਲਾਂਭੇ ਦੇਣ ਲਈ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Man Re Kaun Kumat Tain Lini - Bhai Kamaljeet Singh Ji and Jatha (Mar 29 2011)_1763366868720.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-10",
-      title: "ਮਨ ਰੇ ਰਾਮ ਸਿਉ ਕਰਿ ਪ੍ਰੀਤਿ",
-      gurmukhi: `ਮਨ ਰੇ ਰਾਮ ਸਿਉ ਕਰਿ ਪ੍ਰੀਤਿ।
-ਜਾ ਕੈ ਜੀਵਤ ਸਭ ਕੋ ਜੀਵੈ ਮਰੈ ਸੁ ਕਾਲੁ ਬੀਤਿ।`,
-      meaning: "O mind, enshrine love for the Lord. By whose life all live, and whose death ends the cycle of time.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਪ੍ਰੀਤ ਦੇ ਭਾਵ ਲਈ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Re Man Ram Sio Kar Preet_1763366868722.mp3",
-      pageNumber: 219
-    },
-    {
-      id: "shabad-11",
-      title: "ਮਾਈ ਮੈਂ ਧਨੁ ਪਾਇਓ ਹਰਿ ਨਾਮੁ",
-      gurmukhi: `ਮਾਈ ਮੈਂ ਧਨੁ ਪਾਇਓ ਹਰਿ ਨਾਮੁ।
-ਸਤਿਗੁਰ ਕਿਰਪਾ ਤੇ ਹਰਿ ਨਾਮੁ ਪਾਇਓ ਬਿਨਸਿਓ ਸਭੁ ਅਭਿਮਾਨੁ।`,
-      meaning: "O mother, I have obtained the wealth of the Lord's Name. By the Guru's Grace, I have obtained the Lord's Name, and all ego has been dispelled.",
-      teeka: "",
-      raag: {
-        name: "ਬਿਲਾਵਲ",
-        time: "ਦਿਨ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਖੁਸ਼ੀਭਰਾ, ਸਵੇਰ ਦਾ ਰਾਗ",
-        significance: "ਰਾਗ ਬਿਲਾਵਲ ਆਨੰਦ ਅਤੇ ਪ੍ਰਾਪਤੀ ਦਾ ਭਾਵ ਦਿੰਦਾ ਹੈ।"
-      },
-      raagId: "bilawal",
-      audioUrl: "/attached_assets/Maai Mai Dhan Paayo Har Naam_1763366868715.mp3",
-      pageNumber: 819
-    },
-    {
-      id: "shabad-12",
-      title: "ਮਾਈ ਮਨ ਮੇਰੋ ਬਸਿ ਨਾਹੀ",
-      gurmukhi: `ਮਾਈ ਮਨ ਮੇਰੋ ਬਸਿ ਨਾਹੀ।
-ਕਰਮ ਕਰਤ ਫਿਰਿਓ ਅਨੇਕ ਜਨਮ ਫਿਰਿ ਫਿਰਿ ਪਛੁਤਾਹੀ।`,
-      meaning: "O mother, my mind is not under my control. I have performed many deeds through countless lifetimes, and I regret them again and again.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਲਈ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Maai Man Mero Bas Nahi_1763366868718.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-13",
-      title: "ਪਾਪੀ ਹਿਏ ਮੈ ਕਾਮੁ ਬਸੈ",
-      gurmukhi: `ਪਾਪੀ ਹਿਏ ਮੈ ਕਾਮੁ ਬਸੈ।
-ਕ੍ਰੋਧੁ ਅਹੰਕਾਰੁ ਤਿਸੁ ਸੰਗਿ ਹਸੈ।`,
-      meaning: "In the sinful heart, lust dwells. Anger and ego laugh along with it.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਵਿਕਾਰਾਂ ਤੋਂ ਦੂਰ ਰਹਿਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Paapi Hiye Main Kaam Basae_1763366868716.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-14",
-      title: "ਰੇ ਨਰ ਇਹੁ ਸਾਚੀ ਜੀਵ ਧਰ",
-      gurmukhi: `ਰੇ ਨਰ ਇਹੁ ਸਾਚੀ ਜੀਵ ਧਰ।
-ਨਾਮੁ ਨ ਜਪਹਿ ਤੇ ਕਾਹੇ ਆਏ ਕਰਮ ਧਰਮ ਸਭਿ ਬਿਸਰੇ।`,
-      meaning: "O man, this is the true support of life. Those who do not chant the Name - why did they even come? All their deeds and Dharma have been forgotten.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਜੀਵਨ ਦਾ ਉਦੇਸ਼ ਸਮਝਾਉਂਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Re Nar Eh Sachi Jee Dhar_1763366868717.mp3",
-      pageNumber: 219
-    },
-    {
-      id: "shabad-15",
-      title: "ਕੋਊ ਮਾਈ ਭੂਲਿਓ ਮਨੁ ਸਮਝਾਵੈ",
-      gurmukhi: `ਕੋਊ ਮਾਈ ਭੂਲਿਓ ਮਨੁ ਸਮਝਾਵੈ।
-ਬਿਨੁ ਹਰਿ ਭਜਨ ਜਨਮੁ ਬ੍ਰਿਥਾ ਜਾਵੈ।`,
-      meaning: "If only someone, O mother, would explain to my wandering mind. Without the Lord's meditation, this life is passing in vain.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਨੂੰ ਸਮਝਾਉਣ ਲਈ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Kou Mayi Bhuliyo Man Samjhave - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868730.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-16",
-      title: "ਸਾਧੋ ਇਹੁ ਮਨੁ ਗਹਿਓ ਨ ਜਾਇ",
-      gurmukhi: `ਸਾਧੋ ਇਹੁ ਮਨੁ ਗਹਿਓ ਨ ਜਾਇ।
-ਜੈਸੇ ਮਧੁਕਰ ਫੁਲ ਫੁਲਿ ਡੋਲੈ ਠਾਉ ਬਸੈ ਕਿਹ ਜਾਇ।`,
-      meaning: "O holy one, this mind cannot be caught. Like the bumble bee that wanders from flower to flower - where can it settle?",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੇ ਸੁਭਾਅ ਬਾਰੇ ਸਮਝਾਉਂਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Sadho Eho Man Geheyo Na Jayi - Bhai Randhir Singh - Live Sri Harmandir Sahib_1763366868731.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-17",
-      title: "ਸਾਧੋ ਰਾਮ ਸਰਨਿ ਬਿਸਰਾਮਾ",
-      gurmukhi: `ਸਾਧੋ ਰਾਮ ਸਰਨਿ ਬਿਸਰਾਮਾ।
-ਅਨ ਤਿਆਗਿ ਭਜੀਐ ਇਕੁ ਰਾਮਾ।`,
-      meaning: "O holy one, the Lord's Sanctuary is the place of rest. Abandon all else and meditate on the One Lord.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਸ਼ਰਣਾਗਤੀ ਦਾ ਭਾਵ ਪੈਦਾ ਕਰਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Bhai Randhir Singh Sadho Ram Sharan Bisrama Part 1 of 2_1763366868728.mp3",
-      pageNumber: 219
-    },
-    {
-      id: "shabad-18",
-      title: "ਮਨ ਰੇ ਕਾਹਨ ਭਇਓ ਤੈ ਬਾਵਰਾ",
-      gurmukhi: `ਮਨ ਰੇ ਕਾਹਨ ਭਇਓ ਤੈ ਬਾਵਰਾ।
-ਪਾਇਓ ਮਾਨਸ ਜਨਮ ਗੁੰਮਾਇਓ ਕਰਤ ਬਿਕਾਰ ਬਿਕਾਰਾ।`,
-      meaning: "O mind, why have you become so foolish? You have obtained this precious human life, but you are wasting it doing bad deeds.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਮਨੁੱਖਾ ਜਨਮ ਦੀ ਮਹੱਤਤਾ ਸਮਝਾਉਂਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Shabad for Today (Thursday 19.05.2022) Man Re Kahan Bhaiyo Tai Baura -Bhai Gurdev Singh_1763366868727.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-19",
-      title: "ਨਰ ਅਚੇਤ ਪਾਪ ਤੇ ਡਰਰੀ",
-      gurmukhi: `ਨਰ ਅਚੇਤ ਪਾਪ ਤੇ ਡਰਰੀ।
-ਸੁਖ ਸੰਪਤਿ ਜੋਬਨ ਧਨ ਮਾਇਆ ਸਗਰੀ।`,
-      meaning: "O thoughtless man, fear sin. All comforts, wealth, youth, riches and Maya.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਪਾਪਾਂ ਤੋਂ ਬਚਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Bhai Randhir Singh Nar Achet pap ti dar ri_1763366868725.mp3",
-      pageNumber: 220
-    },
-    {
-      id: "shabad-20",
-      title: "ਬਿਰਥਾ ਕਾਹੂ ਕਉਨ ਸਿਉ ਮਨ ਕੀ",
-      gurmukhi: `ਬਿਰਥਾ ਕਾਹੂ ਕਉਨ ਸਿਉ ਮਨ ਕੀ।
-ਜਾਗਤ ਸੋਵਤ ਸਪਨੈ ਜੀਵਨ ਕੀ।`,
-      meaning: "To whom can the mind speak its pain in vain? Whether awake, asleep or dreaming, throughout life.",
-      teeka: "",
-      raag: {
-        name: "ਗਉੜੀ",
-        time: "ਸ਼ਾਮ ਦਾ ਪਹਿਲਾ ਪਹਿਰ",
-        ras: "ਗੰਭੀਰ ਅਤੇ ਸ਼ਾਂਤ",
-        significance: "ਰਾਗ ਗਉੜੀ ਮਨ ਦੇ ਦਰਦ ਬਾਰੇ ਬੋਲਦਾ ਹੈ।"
-      },
-      raagId: "gauri",
-      audioUrl: "/attached_assets/Birtha Kaho Kaun Seo Man Ki Bhai Kuldeep Singh Ji Hazoori Ragi Darbar Sahib_1763366868724.mp3",
-      pageNumber: 220
-    }
-  ];
 
   private gurdwaras: Gurdwara[] = loadGurdwaraData(); 
 
@@ -567,12 +219,16 @@ export class MemStorage implements IStorage {
     return this.biographySections;
   }
 
-  async getShabads(): Promise<Shabad[]> {
-    return this.shabads;
+  async getBaaniPages(): Promise<BaaniPage[]> {
+    return this.baaniPages;
   }
 
-  async getShabadById(id: string): Promise<Shabad | null> {
-    return this.shabads.find(s => s.id === id) || null;
+  async getBaaniPageById(id: string): Promise<BaaniPage | null> {
+    return this.baaniPages.find(p => p.id === id) || null;
+  }
+
+  async getBaaniPageByNumber(pageNumber: number): Promise<BaaniPage | null> {
+    return this.baaniPages.find(p => p.pageNumber === pageNumber) || null;
   }
 
   async getGurdwaras(): Promise<Gurdwara[]> {
@@ -591,24 +247,8 @@ export class MemStorage implements IStorage {
     return this.resources.filter(r => r.category === category);
   }
 
-  async getRaags(): Promise<RaagInfo[]> {
-    return this.raags;
-  }
-
-  async getRaagById(id: string): Promise<RaagInfo | null> {
-    return this.raags.find(r => r.id === id) || null;
-  }
-
-  async getShabadsByRaag(raagId: string): Promise<Shabad[]> {
-    return this.shabads.filter(s => s.raagId === raagId);
-  }
-
   async getAudioTracks(): Promise<AudioTrack[]> {
     return audioTracksList;
-  }
-
-  async getAudioTracksByRaag(raagId: string): Promise<AudioTrack[]> {
-    return audioTracksList.filter(track => track.raagId === raagId);
   }
 }
 

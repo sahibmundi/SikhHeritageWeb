@@ -23,26 +23,44 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
-  // Shabads endpoints
-  app.get("/api/shabads", async (req, res) => {
+  // Baani Pages endpoints
+  app.get("/api/baani/pages", async (req, res) => {
     try {
-      const shabads = await storage.getShabads();
-      res.json(shabads);
+      const pages = await storage.getBaaniPages();
+      res.json(pages);
     } catch (error) {
-      res.status(500).json({ error: "Failed to fetch shabads" });
+      res.status(500).json({ error: "Failed to fetch baani pages" });
     }
   });
 
-  app.get("/api/shabads/:id", async (req, res) => {
+  app.get("/api/baani/pages/:id", async (req, res) => {
     try {
-      const shabad = await storage.getShabadById(req.params.id);
-      if (!shabad) {
-        res.status(404).json({ error: "Shabad not found" });
+      const page = await storage.getBaaniPageById(req.params.id);
+      if (!page) {
+        res.status(404).json({ error: "Baani page not found" });
         return;
       }
-      res.json(shabad);
+      res.json(page);
     } catch (error) {
-      res.status(500).json({ error: "Failed to fetch shabad" });
+      res.status(500).json({ error: "Failed to fetch baani page" });
+    }
+  });
+
+  app.get("/api/baani/pages/number/:pageNumber", async (req, res) => {
+    try {
+      const pageNumber = parseInt(req.params.pageNumber);
+      if (isNaN(pageNumber)) {
+        res.status(400).json({ error: "Invalid page number" });
+        return;
+      }
+      const page = await storage.getBaaniPageByNumber(pageNumber);
+      if (!page) {
+        res.status(404).json({ error: "Baani page not found" });
+        return;
+      }
+      res.json(page);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch baani page" });
     }
   });
 
@@ -85,49 +103,12 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
-  // Raags endpoints
-  app.get("/api/raags", async (req, res) => {
-    try {
-      const raags = await storage.getRaags();
-      res.json(raags);
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch raags" });
-    }
-  });
-
-  app.get("/api/raags/:id", async (req, res) => {
-    try {
-      const raag = await storage.getRaagById(req.params.id);
-      if (!raag) {
-        res.status(404).json({ error: "Raag not found" });
-        return;
-      }
-      res.json(raag);
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch raag" });
-    }
-  });
-
-  app.get("/api/raags/:id/shabads", async (req, res) => {
-    try {
-      const shabads = await storage.getShabadsByRaag(req.params.id);
-      res.json(shabads);
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch shabads for raag" });
-    }
-  });
 
   // Audio endpoints
   app.get("/api/audio", async (req, res) => {
     try {
-      const { raagId } = req.query;
-      if (raagId && typeof raagId === "string") {
-        const tracks = await storage.getAudioTracksByRaag(raagId);
-        res.json(tracks);
-      } else {
-        const tracks = await storage.getAudioTracks();
-        res.json(tracks);
-      }
+      const tracks = await storage.getAudioTracks();
+      res.json(tracks);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch audio tracks" });
     }
