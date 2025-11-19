@@ -64,6 +64,29 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
+  // Baani Raags endpoints
+  app.get("/api/baani/raags", async (req, res) => {
+    try {
+      const raags = await storage.getBaaniRaags();
+      res.json(raags);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch baani raags" });
+    }
+  });
+
+  app.get("/api/baani/raags/:id", async (req, res) => {
+    try {
+      const raag = await storage.getBaaniRaagById(req.params.id);
+      if (!raag) {
+        res.status(404).json({ error: "Baani raag not found" });
+        return;
+      }
+      res.json(raag);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch baani raag" });
+    }
+  });
+
   // Gurdwaras endpoints
   app.get("/api/gurdwaras", async (req, res) => {
     try {

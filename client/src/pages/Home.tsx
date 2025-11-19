@@ -7,7 +7,7 @@ import { AudioSection } from "@/components/AudioSection";
 import { Gurdwaras } from "@/components/Gurdwaras";
 import { Resources } from "@/components/Resources";
 import { Footer } from "@/components/Footer";
-import type { TimelineEvent, BiographySection, BaaniPage, Gurdwara, Resource } from "@shared/schema";
+import type { TimelineEvent, BiographySection, BaaniRaag, Gurdwara, Resource } from "@shared/schema";
 
 export default function Home() {
   const { data: timeline = [], isLoading: timelineLoading } = useQuery<TimelineEvent[]>({
@@ -18,8 +18,8 @@ export default function Home() {
     queryKey: ["/api/biography/sections"]
   });
 
-  const { data: baaniPages = [], isLoading: baaniPagesLoading } = useQuery<BaaniPage[]>({
-    queryKey: ["/api/baani/pages"]
+  const { data: baaniRaags = [], isLoading: baaniRaagsLoading } = useQuery<BaaniRaag[]>({
+    queryKey: ["/api/baani/raags"]
   });
 
   const { data: gurdwaras = [], isLoading: gurdwarasLoading } = useQuery<Gurdwara[]>({
@@ -31,7 +31,7 @@ export default function Home() {
   });
 
   // Show loading state while fetching data
-  if (timelineLoading || biographyLoading || baaniPagesLoading || gurdwarasLoading || resourcesLoading) {
+  if (timelineLoading || biographyLoading || baaniRaagsLoading || gurdwarasLoading || resourcesLoading) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center" data-testid="page-loading">
         <div className="text-center space-y-4">
@@ -47,7 +47,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Biography timeline={timeline} sections={biographySections} />
-      <BaaniViewer pages={baaniPages} />
+      <BaaniViewer raags={baaniRaags} />
       <AudioSection />
       <Gurdwaras gurdwaras={gurdwaras} />
       <Resources resources={resources} />

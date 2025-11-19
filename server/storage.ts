@@ -1,14 +1,18 @@
-import type { TimelineEvent, BiographySection, BaaniPage, Gurdwara, Resource, AudioTrack } from "@shared/schema";
+import type { TimelineEvent, BiographySection, BaaniPage, BaaniRaag, Gurdwara, Resource, AudioTrack } from "@shared/schema";
 
 export interface IStorage {
   // Biography
   getTimeline(): Promise<TimelineEvent[]>;
   getBiographySections(): Promise<BiographySection[]>;
   
-  // Baani Pages
+  // Baani Pages (legacy)
   getBaaniPages(): Promise<BaaniPage[]>;
   getBaaniPageById(id: string): Promise<BaaniPage | null>;
   getBaaniPageByNumber(pageNumber: number): Promise<BaaniPage | null>;
+  
+  // Baani Raags (new text-based)
+  getBaaniRaags(): Promise<BaaniRaag[]>;
+  getBaaniRaagById(id: string): Promise<BaaniRaag | null>;
   
   // Gurdwaras
   getGurdwaras(): Promise<Gurdwara[]>;
@@ -27,6 +31,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { baaniPages as baaniPagesList } from "./baani-pages-data.js";
+import { baaniRaags as baaniRaagsList } from "./baani-data.js";
 import { audioTracks as audioTracksList } from "./audio-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -109,6 +114,7 @@ function loadGurdwaraData(): Gurdwara[] {
 
 export class MemStorage implements IStorage {
   private baaniPages: BaaniPage[] = baaniPagesList;
+  private baaniRaags: BaaniRaag[] = baaniRaagsList;
   
   private timeline: TimelineEvent[] = [
     { year: "1621", label: "ਜਨਮ", sectionId: "janm" },
@@ -229,6 +235,14 @@ export class MemStorage implements IStorage {
 
   async getBaaniPageByNumber(pageNumber: number): Promise<BaaniPage | null> {
     return this.baaniPages.find(p => p.pageNumber === pageNumber) || null;
+  }
+
+  async getBaaniRaags(): Promise<BaaniRaag[]> {
+    return this.baaniRaags;
+  }
+
+  async getBaaniRaagById(id: string): Promise<BaaniRaag | null> {
+    return this.baaniRaags.find(r => r.id === id) || null;
   }
 
   async getGurdwaras(): Promise<Gurdwara[]> {

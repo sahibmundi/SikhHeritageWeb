@@ -17,7 +17,23 @@ export interface BiographySection {
   content: string;
 }
 
-// Baani Page Type
+// Baani Shabad (Hymn) Type
+export interface BaaniShabad {
+  id: string;
+  text: string;
+  order: number;
+}
+
+// Baani Raag Type
+export interface BaaniRaag {
+  id: string;
+  name: string;
+  title: string;
+  order: number;
+  shabads: BaaniShabad[];
+}
+
+// Legacy Baani Page Type (kept for compatibility)
 export interface BaaniPage {
   id: string;
   pageNumber: number;
