@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { MapPin, X, Calendar, ChevronRight, ChevronLeft } from "lucide-react";
+import { MapPin, X, Calendar, ChevronRight, ChevronLeft, LayoutGrid, Rows3 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PdfList } from "@/components/PdfViewer";
@@ -11,7 +11,10 @@ interface GurdwarasProps {
   gurdwaras: Gurdwara[];
 }
 
+type ViewMode = "carousel" | "grid";
+
 export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
+  const [viewMode, setViewMode] = useState<ViewMode>("carousel");
   const [selectedGurdwara, setSelectedGurdwara] = useState<Gurdwara | null>(
     null,
   );
@@ -99,8 +102,8 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
   return (
     <section id="gurdwaras" className="py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title */}
-        <div className="text-center mb-16">
+        {/* Title & View Toggle */}
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A1A44] dark:text-yellow-400">
             ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ
           </h2>
@@ -108,9 +111,94 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
           <p className="text-lg md:text-xl text-[#243763] dark:text-gray-300 mt-4">
             ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਨਾਲ ਜੁੜੇ ਇਤਿਹਾਸਕ ਗੁਰਧਾਮ
           </p>
+          
+          {/* View Mode Toggle */}
+          <div className="flex justify-center gap-2 mt-6">
+            <Button
+              variant={viewMode === "carousel" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setViewMode("carousel")}
+              className="flex items-center gap-2"
+              data-testid="button-view-carousel"
+            >
+              <Rows3 className="w-4 h-4" />
+              Carousel
+            </Button>
+            <Button
+              variant={viewMode === "grid" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setViewMode("grid")}
+              className="flex items-center gap-2"
+              data-testid="button-view-grid"
+            >
+              <LayoutGrid className="w-4 h-4" />
+              Grid
+            </Button>
+          </div>
         </div>
 
+        {/* Grid View */}
+        {viewMode === "grid" && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {gurdwaras.map((gurdwara) => (
+              <motion.div key={gurdwara.id} variants={itemVariants}>
+                <Card
+                  className="cursor-pointer shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden bg-white dark:bg-gray-800 h-full flex flex-col"
+                  onClick={() => setSelectedGurdwara(gurdwara)}
+                  data-testid={`card-gurdwara-grid-${gurdwara.id}`}
+                >
+                  {gurdwara.imageUrl && (
+                    <div className="aspect-video overflow-hidden bg-gray-200">
+                      <img
+                        src={gurdwara.imageUrl}
+                        alt={gurdwara.name}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  )}
+
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-[#0A1A44] dark:text-yellow-400">
+                      {gurdwara.name}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent className="space-y-4 flex-grow flex flex-col">
+                    <p className="text-[#1b2553] dark:text-gray-300 text-sm line-clamp-3 flex-grow">
+                      {gurdwara.briefHistory}
+                    </p>
+
+                    <p className="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
+                      <MapPin className="w-4 h-4" />
+                      {gurdwara.location.address}
+                    </p>
+
+                    <Button
+                      className="w-full flex items-center justify-center gap-2"
+                      variant="outline"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedGurdwara(gurdwara);
+                      }}
+                      data-testid={`button-details-grid-${gurdwara.id}`}
+                    >
+                      ਪੂਰੀ ਜਾਣਕਾਰੀ ਦੇਖੋ
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+
         {/* Carousel Container */}
+        {viewMode === "carousel" && (
         <div className="relative">
           {/* Navigation Buttons */}
           <Button
@@ -220,6 +308,7 @@ export function Gurdwaras({ gurdwaras }: GurdwarasProps) {
             ))}
           </div>
         </div>
+        )}
 
         {/* MODAL */}
         <AnimatePresence>
