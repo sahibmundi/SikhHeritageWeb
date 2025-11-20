@@ -1,6 +1,35 @@
 import type { BaaniRaag } from "@shared/schema";
+import { readFileSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
-export const baaniRaags: BaaniRaag[] = [
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Load Baani data from JSON file
+let baaniData: BaaniRaag[] | null = null;
+
+function loadBaaniData(): BaaniRaag[] {
+  if (baaniData) {
+    return baaniData;
+  }
+  
+  try {
+    const dataPath = join(__dirname, 'data', 'baani.json');
+    const fileContent = readFileSync(dataPath, 'utf-8');
+    baaniData = JSON.parse(fileContent) as BaaniRaag[];
+    console.log(`Loaded ${baaniData.length} raags with Baani data from JSON`);
+    return baaniData;
+  } catch (error) {
+    console.error('Error loading Baani data:', error);
+    console.log('Using fallback Baani data');
+    return fallbackBaaniRaags;
+  }
+}
+
+// Fallback data in case JSON loading fails
+const fallbackBaaniRaags: BaaniRaag[] = [
   {
     id: "raag-gauri",
     name: "ਰਾਗੁ ਗਉੜੀ",
@@ -127,3 +156,6 @@ export const baaniRaags: BaaniRaag[] = [
     ]
   }
 ];
+
+// Export function that loads Baani data from JSON
+export const baaniRaags: BaaniRaag[] = loadBaaniData();
