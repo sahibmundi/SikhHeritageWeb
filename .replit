@@ -50,6 +50,10 @@ externalPort = 3001
 localPort = 44857
 externalPort = 3003
 
+[[ports]]
+localPort = 45249
+externalPort = 4200
+
 [nix]
 channel = "stable-25_05"
 packages = ["poppler", "imagemagick"]
