@@ -13,6 +13,7 @@ export interface IStorage {
   // Baani Raags (new text-based)
   getBaaniRaags(): Promise<BaaniRaag[]>;
   getBaaniRaagById(id: string): Promise<BaaniRaag | null>;
+  getBaaniText(): Promise<string>;
   
   // Gurdwaras
   getGurdwaras(): Promise<Gurdwara[]>;
@@ -31,7 +32,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { baaniPages as baaniPagesList } from "./baani-pages-data.js";
-import { baaniRaags as baaniRaagsList } from "./baani-data.js";
+import { baaniRaags as baaniRaagsList, getBaaniText as loadBaaniText } from "./baani-data.js";
 import { audioTracks as audioTracksList } from "./audio-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -255,6 +256,10 @@ export class MemStorage implements IStorage {
 
   async getBaaniRaagById(id: string): Promise<BaaniRaag | null> {
     return this.baaniRaags.find(r => r.id === id) || null;
+  }
+
+  async getBaaniText(): Promise<string> {
+    return loadBaaniText();
   }
 
   async getGurdwaras(): Promise<Gurdwara[]> {

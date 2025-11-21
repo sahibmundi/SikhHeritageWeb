@@ -64,13 +64,23 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
-  // Baani Raags endpoints
+  // Baani text endpoint
+  app.get("/api/baani/text", async (req, res) => {
+    try {
+      const text = await storage.getBaaniText();
+      res.json({ text });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch baani text" });
+    }
+  });
+
+  // Baani Raags endpoints (legacy)
   app.get("/api/baani/raags", async (req, res) => {
     try {
-      const raags = await storage.getBaaniRaags();
-      res.json(raags);
+      const text = await storage.getBaaniText();
+      res.json({ text });
     } catch (error) {
-      res.status(500).json({ error: "Failed to fetch baani raags" });
+      res.status(500).json({ error: "Failed to fetch baani" });
     }
   });
 
