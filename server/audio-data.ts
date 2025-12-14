@@ -31,26 +31,6 @@ export const audioTracks: AudioTrack[] = [
     description: "ਰਾਗ ਸੋਰਠਿ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
   },
   {
-    id: "audio-3",
-    title: "ਕਬੀਰ ਮਨੁ ਨਿਰਮਲੁ ਭਇਆ",
-    raagId: "asa",
-    shabadId: "shabad-4",
-    performer: "ਭਾਈ ਰਣਧੀਰ ਸਿੰਘ",
-    duration: "7:46",
-    audioUrl: "/attached_assets/Bhai Randhir Singh Nar Achet pap ti dar ri_1763366868725.mp3",
-    description: "ਰਾਗ ਆਸਾ - ਭਗਤ ਕਬੀਰ ਜੀ ਦੀ ਬਾਣੀ"
-  },
-  {
-    id: "audio-4",
-    title: "ਮਿਤ੍ਰ ਪਿਆਰੇ ਨੂੰ ਹਾਲ ਮੁਰੀਦਾਂ ਦਾ ਕਹਿਣਾ",
-    raagId: "bilawal",
-    shabadId: "shabad-5",
-    performer: "ਭਾਈ ਕਮਲਜੀਤ ਸਿੰਘ",
-    duration: "15:36",
-    audioUrl: "/attached_assets/Sabh kich jiwat ko biwhar... Bhai kamaljeet singh ji darbar sahib amritsar_1763366868723.mp3",
-    description: "ਰਾਗ ਬਿਲਾਵਲੁ - ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ"
-  },
-  {
     id: "audio-5",
     title: "ਰਾਮ ਨਾਮੁ ਜਪਿ ਹਿਰਦੈ ਮਾਹਿ",
     raagId: "dhanasri",

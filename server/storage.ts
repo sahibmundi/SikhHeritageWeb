@@ -1,4 +1,5 @@
 import type { TimelineEvent, BiographySection, BaaniPage, BaaniRaag, Gurdwara, Resource, AudioTrack } from "@shared/schema";
+import type { BaaniShabad } from "./baani-data.js";
 
 export interface IStorage {
   // Biography
@@ -14,6 +15,7 @@ export interface IStorage {
   getBaaniRaags(): Promise<BaaniRaag[]>;
   getBaaniRaagById(id: string): Promise<BaaniRaag | null>;
   getBaaniText(): Promise<string>;
+  getBaaniShabads(): Promise<BaaniShabad[]>;
   
   // Gurdwaras
   getGurdwaras(): Promise<Gurdwara[]>;
@@ -32,7 +34,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { baaniPages as baaniPagesList } from "./baani-pages-data.js";
-import { baaniRaags as baaniRaagsList, getBaaniText as loadBaaniText } from "./baani-data.js";
+import { baaniRaags as baaniRaagsList, getBaaniText as loadBaaniText, getBaaniShabads as loadBaaniShabads } from "./baani-data.js";
 import { audioTracks as audioTracksList } from "./audio-data.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -260,6 +262,10 @@ export class MemStorage implements IStorage {
 
   async getBaaniText(): Promise<string> {
     return loadBaaniText();
+  }
+
+  async getBaaniShabads(): Promise<BaaniShabad[]> {
+    return loadBaaniShabads();
   }
 
   async getGurdwaras(): Promise<Gurdwara[]> {

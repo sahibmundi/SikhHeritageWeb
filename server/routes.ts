@@ -74,6 +74,16 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
+  // Baani shabads endpoint (new format with left-right layout)
+  app.get("/api/baani/shabads", async (req, res) => {
+    try {
+      const shabads = await storage.getBaaniShabads();
+      res.json(shabads);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch baani shabads" });
+    }
+  });
+
   // Baani Raags endpoints (legacy)
   app.get("/api/baani/raags", async (req, res) => {
     try {

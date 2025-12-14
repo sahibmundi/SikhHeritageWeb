@@ -6,25 +6,36 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-let baaniText: string = '';
+export interface BaaniShabad {
+  id: string;
+  raagName: string;
+  gurbani: string;
+  vyakhya: string;
+}
 
-function loadBaaniText(): string {
+let baaniShabads: BaaniShabad[] = [];
+
+function loadBaaniShabads(): BaaniShabad[] {
   try {
-    const textPath = join(__dirname, 'data', 'baani.txt');
-    const text = readFileSync(textPath, 'utf-8');
-    console.log(`Loaded Baani text (${text.length} characters)`);
-    return text;
+    const jsonPath = join(__dirname, 'data', 'baani-shabads.json');
+    const data = readFileSync(jsonPath, 'utf-8');
+    const shabads = JSON.parse(data) as BaaniShabad[];
+    console.log(`Loaded ${shabads.length} Baani shabads`);
+    return shabads;
   } catch (error) {
-    console.error('Error loading Baani text:', error);
-    return 'ਬਾਣੀ ਲੋਡ ਕਰਨ ਵਿੱਚ ਤਰੁੱਟੀ';
+    console.error('Error loading Baani shabads:', error);
+    return [];
   }
 }
 
-baaniText = loadBaaniText();
+baaniShabads = loadBaaniShabads();
 
-export function getBaaniText(): string {
-  return baaniText;
+export function getBaaniShabads(): BaaniShabad[] {
+  return baaniShabads;
 }
 
-// Keep empty raags array for compatibility
+export function getBaaniText(): string {
+  return baaniShabads.map(s => s.gurbani).join('\n\n');
+}
+
 export const baaniRaags: BaaniRaag[] = [];
